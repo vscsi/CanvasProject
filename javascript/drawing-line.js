@@ -19,11 +19,11 @@ class DrawingLine extends PaintFunction {
   }
   onDragging(coord, event) {
     // this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextDraft.beginPath();
-    this.contextDraft.strokeStyle = currentDrawColor;
-    this.contextDraft.moveTo(coord[0],coord[1]);
-    this.contextDraft.lineTo(this.origX,this.origY);
-    this.contextDraft.stroke();
+    // this.contextDraft.beginPath();
+    // this.contextDraft.strokeStyle = currentDrawColor;
+    // this.contextDraft.moveTo(coord[0],coord[1]);
+    // this.contextDraft.lineTo(this.origX,this.origY);
+    // this.contextDraft.stroke();
   }
 
   onMouseMove() {}
