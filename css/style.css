@@ -5,16 +5,65 @@
     bottom: 0px;
     left: 0px;
     right: 0px;
-}
-
-#canvas-draft {
+  }
+  
+  #canvas-draft {
     background-color: transparent;
-}
-
-body {
+  }
+  body {
     overflow: hidden;
-}
-
-#canvas-container {
+  }
+  #canvas-container {
     height: 720px;
-}
+  }
+  
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+  
+  }
+  
+  .color-picker {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid rgb(187, 187, 187);
+    margin: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+  
+  #color-picker-red {
+    background-color: red;
+  }
+  
+  #color-picker-blue {
+    background-color: blue;
+  }
+  
+  #color-picker-green {
+    background-color: green;
+  }
+  
+  .size-picker {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid rgb(187, 187, 187);
+    margin: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
+  
+  #size-1 {
+    order:1;
+  }
+  
+  #size-2 {
+    order:2;
+  }
+  
+  #size-3 {
+    order:3;
+    border: 2px solid rgba(255, 255, 255, 0);
+  }

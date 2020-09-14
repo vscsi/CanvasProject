@@ -2,35 +2,39 @@
  * Drawing Line Functionality
  * ==================================
  ***********************************************/
+
 class DrawingLine extends PaintFunction {
-  // This class extends the PaintFunction class
-  constructor(contextReal) {
+  constructor(contextReal, contextDraft) {
     super();
-    this.context = contextReal;
+    this.contextReal = contextReal;
+    this.contextDraft = contextDraft;
   }
 
-  // On mouse down, ensure that the pen has these features
   onMouseDown(coord, event) {
-    this.context.strokeStyle = "#df4b26";
-    this.context.lineJoin = "round";
-    this.context.lineWidth = 5;
-    this.context.beginPath();
-    this.context.moveTo(coord[0], coord[1]);
-    this.draw(coord[0], coord[1]);
+    this.contextReal.strokeStyle = currentDrawColor;
+    this.contextReal.lineWidth = currentBrushSize;
+    // this.contextDraft.lineWidth = currentBrushSize;
+    this.origX = coord[0];
+    this.origY = coord[1];
   }
   onDragging(coord, event) {
-    this.draw(coord[0], coord[1]);
+    // this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+    this.contextDraft.beginPath();
+    this.contextDraft.strokeStyle = currentDrawColor;
+    this.contextDraft.moveTo(coord[0],coord[1]);
+    this.contextDraft.lineTo(this.origX,this.origY);
+    this.contextDraft.stroke();
   }
 
   onMouseMove() {}
-  onMouseUp() {}
+  onMouseUp(coord) {
+    // this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+    // this.contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+    this.contextReal.beginPath();
+    this.contextReal.moveTo(coord[0],coord[1]);
+    this.contextReal.lineTo(this.origX,this.origY);
+    this.contextReal.stroke();
+  }
   onMouseLeave() {}
   onMouseEnter() {}
-
-  draw(x, y) {
-    this.context.lineTo(x, y);
-    this.context.moveTo(x, y);
-    this.context.closePath();
-    this.context.stroke();
-  }
 }

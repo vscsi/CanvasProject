@@ -2,7 +2,7 @@
  * Drawing Rectangle Functionality
  * ==================================
  ***********************************************/
-// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
+
 class DrawingRectangle extends PaintFunction {
   constructor(contextReal, contextDraft) {
     super();
@@ -11,12 +11,12 @@ class DrawingRectangle extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.fillStyle = "#f44";
+    this.contextReal.fillStyle = currentDrawColor;
     this.origX = coord[0];
     this.origY = coord[1];
   }
   onDragging(coord, event) {
-    this.contextDraft.fillStyle = "#f44";
+    this.contextDraft.fillStyle = currentDrawColor;
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextDraft.fillRect(
       this.origX,
@@ -29,12 +29,16 @@ class DrawingRectangle extends PaintFunction {
   onMouseMove() {}
   onMouseUp(coord) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    this.contextReal.fillRect(
+    
+    this.contextReal.strokeRect(20, 20, 150, 100);
+    this.contextReal.Rect(
       this.origX,
       this.origY,
       coord[0] - this.origX,
       coord[1] - this.origY
     );
+
+    
   }
   onMouseLeave() {}
   onMouseEnter() {}
