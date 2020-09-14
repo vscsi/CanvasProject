@@ -57,3 +57,21 @@ class PaintFunction {
   onMouseLeave() {}
   onMouseEnter() {}
 }
+
+
+// Color picker
+$( ".color-picker" ).click(function() {
+  currentDrawColor = $( this ).css("background-color");
+});
+
+// Size picker
+$( ".size-picker" ).click(function() {
+  let brushSizeID = $(this).css("order");
+  if (brushSizeID == 1) {
+    currentBrushSize = 2;
+  } else if (brushSizeID == 2) {
+    currentBrushSize = 5;
+  } else if (brushSizeID == 3) {
+    currentBrushSize = 10;
+  };
+});
