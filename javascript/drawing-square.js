@@ -31,12 +31,13 @@ class DrawingSquare extends PaintFunction {
       onMouseMove() {}
       onMouseUp(coord) {
         this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-        this.contextReal.strokeRect(
-          this.origX,
-          this.origY,
-          coord[1] - this.origY,
-          coord[1] - this.origY
-        );
+        drawStrokeSquare(this.origX, this.origY, coord[1] - this.origY, "stroke", this.contextReal.strokeStyle, this.contextReal.lineWidth, "#", this.contextReal)
+        // this.contextReal.strokeRect(
+        //   this.origX,
+        //   this.origY,
+        //   coord[1] - this.origY,
+        //   coord[1] - this.origY
+        // );
       }
     onMouseLeave() {}
     onMouseEnter() {}
