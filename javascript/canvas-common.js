@@ -9,9 +9,12 @@ let canvasDraft = document.getElementById("canvas-draft");
 let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
 let dragging = false;
-let currentBgColor= 'white';
+let currentBgColor = 'white';
 let currentDrawColor = 'black';
 let currentBrushSize = 5;
+
+contextReal.fillStyle = 'white';
+contextReal.fillRect(0, 0, canvasReal.width, canvasReal.height);
 
 $("#canvas-draft").mousedown(function (e) {
   let mouseX = e.offsetX;
@@ -63,12 +66,12 @@ class PaintFunction {
 
 
 // Color picker
-$( ".color-picker" ).click(function() {
-  currentDrawColor = $( this ).css("background-color");
+$(".color-picker").click(function () {
+  currentDrawColor = $(this).css("background-color");
 });
 
 // Size picker
-$( ".size-picker" ).click(function() {
+$(".size-picker").click(function () {
   let brushSizeID = $(this).css("order");
   if (brushSizeID == 1) {
     currentBrushSize = 2;
