@@ -13,6 +13,7 @@ let currentBgColor = 'white';
 let currentDrawColor = 'black';
 let currentBrushSize = 5;
 
+/***** setting background white for canvas *******/ 
 contextReal.fillStyle = 'white';
 contextReal.fillRect(0, 0, canvasReal.width, canvasReal.height);
 
