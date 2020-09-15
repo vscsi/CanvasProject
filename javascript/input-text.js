@@ -1,54 +1,59 @@
+let containInput = false;
+
 class DrawText extends PaintFunction {
-    constructor(contextReal, contextDraft) {
+    constructor(contextReal){
         super();
         this.contextReal = contextReal;
-        this.contextDraft = contextDraft;
-        this.clickNum = 0
     }
-    onMouseUp(coord, event) {
 
-        if (this.clickNum !== 1) {
-            $('#textBox').css('display', 'block')
-
-            this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-
-            this.contextDraft.strokeStyle = curStroke;
-            this.contextDraft.fillStyle = curFill;
-            this.contextDraft.lineWidth = curWidth;
-            this.contextDraft.font = curFont;
-
-            this.origX = coord[0];
-            this.origY = coord[1];
-
-            textBox.style.left = this.origX + 'px';
-            textBox.style.top = this.origY + 'px';
-            textContent = textBox.value;
-            textBox.style['z-index'] = 6;
-            textBox.value = "";
-
-            this.contextDraft.fillText(textContent, this.origX, this.origY);
-            this.clickNum++
-        }
-
-        else if (this.clickNum === 1) {
-            $('#textBox').css('display', '')
-
-            this.contextReal.strokeStyle = curStroke;
-            this.contextReal.fillStyle = curFill;
-            this.contextReal.lineWidth = curWidth;
-            this.contextReal.font = curFont;
-
-            textContent = textBox.value;
-            textBox.style['z-index'] = 1;
-            textBox.value = "";
-
-            this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-            this.contextReal.fillText(textContent, this.origX, this.origY);
-            this.clickNum = 0
-        }
+    onMouseDown(coord, event){
+        commitText(event);
     }
+
+    onDragging() { }
+    onMouseMove() { }
+    onMouseUp() { }
     onMouseLeave() { }
     onMouseEnter() { }
-    onDragging() { }
-    onMouseDown() { }
+}
+
+function commitText(event){
+    const font = '26px san-serif';
+    function addInput(x, y){
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = 'Enter your text here';
+        input.style.background = 'transparent';
+        input.style.border = 'none',
+        input.style.position = 'fixed',
+        input.style.top = `${y}px`;
+        input.style.left = `${x}px`;
+        input.style.width = `${300}px`;
+        input.style.zIndex = 999999;
+        input.onkeydown = handleEnter;
+        document.body.appendChild(input);
+
+        containInput = true
+    }
+
+    function handleEnter(event){
+        const keyCode = event.keyCode;
+        if(keyCode == 13 || keyCode == 27){
+            drawText(this.value, parseInt(this.style.left, 10), parseInt(this.style.top, 10));
+            document.body.removeChild(this);
+            containInput = false;
+        }
+    }
+
+    function drawText(text, x, y){
+        contextReal.textBaseline = 'top';
+        contextReal.textAlign = 'left';
+        contextReal.font = font;
+        contextReal.fillStyle = currentDrawColor;
+        contextReal.fillText(text, event.offsetX, event.offsetY);
+    }
+
+    addInput(event.clientX, event.clientY);
+    containInput = false;
+
 }
