@@ -1,4 +1,3 @@
-
 $('#color-picker').spectrum({
   type: "color",
   showPalette: "false",
@@ -7,3 +6,5 @@ $('#color-picker').spectrum({
   allowEmpty: "false"
 });
 
+$('.sp-preview-inner').attr('style')
+console.log
