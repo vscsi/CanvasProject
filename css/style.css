@@ -206,5 +206,11 @@ p {
   }
 
 
-
+  .text-style {
+    position: absolute;
+    display: none;
+    word-break: break-all;
+    background-color: transparent;
+    z-index: 1;
+}
 
