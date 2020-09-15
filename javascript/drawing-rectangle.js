@@ -28,19 +28,20 @@ class DrawingRectangle extends PaintFunction {
     );
   }
 
-  onMouseMove() {}
+  // onMouseMove() {}
   onMouseUp(coord) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-  
-    this.contextReal.strokeRect(
-      this.origX,
-      this.origY,
-      coord[0] - this.origX,
-      coord[1] - this.origY
-    );
+    
+    drawStrokeRect(coord[0], coord[1], this.origX, this.origY, "stroke", this.contextReal.strokeStyle, this.contextReal.lineWidth, "black", this.contextReal);
+    // this.contextReal.strokeRect(
+    //   this.origX,
+    //   this.origY,
+    //   coord[0] - this.origX,
+    //   coord[1] - this.origY
+    // );
 
     
   }
-  onMouseLeave() {}
-  onMouseEnter() {}
+  // onMouseLeave() {}
+  // onMouseEnter() {}
 }
