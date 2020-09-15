@@ -10,7 +10,7 @@ let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
 let dragging = false;
 let currentBgColor = 'white';
-let currentDrawColor = 'black';
+let currentDrawColor;
 let currentBrushSize = 5;
 
 /***** setting background white for canvas *******/ 
@@ -67,8 +67,15 @@ class PaintFunction {
 
 
 // Color picker
-$(".color-picker").click(function () {
-  currentDrawColor = $(this).css("background-color");
+$(".sp-val").click(function () {
+  t = $("#color-picker").spectrum("get");
+  currentDrawColor = t.toRgbString()
+  console.log(currentDrawColor)
+});
+$(".sp-hue").click(function () {
+  t = $("#color-picker").spectrum("get");
+  currentDrawColor = t.toRgbString()
+  console.log(currentDrawColor)
 });
 
 // Size picker

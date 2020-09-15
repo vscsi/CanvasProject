@@ -68,6 +68,8 @@
     border: 2px solid rgba(255, 255, 255, 0);
   }
 
-  .sp-palette-container{
+
+/***** color picker css override *****/
+  /* .sp-palette-container{
     display: none;
-  }
+  } */
