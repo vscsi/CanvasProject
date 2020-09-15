@@ -19,7 +19,9 @@ class DrawingLine extends PaintFunction {
     contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     contextDraft.beginPath();
     contextDraft.strokeStyle = currentDrawColor;
+    contextReal.strokeStyle = currentDrawColor;
     contextDraft.lineWidth = currentBrushSize;
+    contextReal.lineWidth = currentBrushSize;
     contextDraft.moveTo(coord[0],coord[1]);
     contextDraft.lineTo(this.origX,this.origY);
     contextDraft.stroke();
