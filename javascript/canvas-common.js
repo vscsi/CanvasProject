@@ -10,7 +10,7 @@ let contextDraft = canvasDraft.getContext("2d");
 let currentFunction;
 let dragging = false;
 let currentBgColor = 'white';
-let currentDrawColor = 'black';
+let currentDrawColor;
 let currentBrushSize = 5;
 
 /***** setting background white for canvas *******/ 
@@ -27,7 +27,7 @@ $("#canvas-draft").mousedown(function (e) {
 $("#canvas-draft").mousemove(function (e) {
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
-  currentFunction.onMouseMove([mouseX, mouseY], e);
+  // currentFunction.onMouseMove([mouseX, mouseY], e);
   if (dragging) {
     currentFunction.onDragging([mouseX, mouseY], e);
   }
@@ -40,18 +40,18 @@ $("#canvas-draft").mouseup(function (e) {
   currentFunction.onMouseUp([mouseX, mouseY], e);
 });
 
-$("#canvas-draft").mouseleave(function (e) {
-  dragging = false;
-  let mouseX = e.offsetX;
-  let mouseY = e.offsetY;
-  currentFunction.onMouseLeave([mouseX, mouseY], e);
-});
+// $("#canvas-draft").mouseleave(function (e) {
+//   dragging = false;
+//   let mouseX = e.offsetX;
+//   let mouseY = e.offsetY;
+//   currentFunction.onMouseLeave([mouseX, mouseY], e);
+// });
 
-$("#canvas-draft").mouseenter(function (e) {
-  let mouseX = e.offsetX;
-  let mouseY = e.offsetY;
-  currentFunction.onMouseEnter([mouseX, mouseY], e);
-});
+// $("#canvas-draft").mouseenter(function (e) {
+//   let mouseX = e.offsetX;
+//   let mouseY = e.offsetY;
+//   currentFunction.onMouseEnter([mouseX, mouseY], e);
+// });
 
 /** # Class (all classes will have these methods) #
 /*  ====================== */
@@ -67,8 +67,15 @@ class PaintFunction {
 
 
 // Color picker
-$(".color-picker").click(function () {
-  currentDrawColor = $(this).css("background-color");
+$(".sp-val").click(function () {
+  t = $("#color-picker").spectrum("get");
+  currentDrawColor = t.toRgbString()
+  console.log(currentDrawColor)
+});
+$(".sp-hue").click(function () {
+  t = $("#color-picker").spectrum("get");
+  currentDrawColor = t.toRgbString()
+  console.log(currentDrawColor)
 });
 
 // Size picker

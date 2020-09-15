@@ -28,7 +28,7 @@ class DrawingRectangle extends PaintFunction {
     );
   }
 
-  onMouseMove() {}
+  // onMouseMove() {}
   onMouseUp(coord) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     
@@ -42,6 +42,6 @@ class DrawingRectangle extends PaintFunction {
 
     
   }
-  onMouseLeave() {}
-  onMouseEnter() {}
+  // onMouseLeave() {}
+  // onMouseEnter() {}
 }

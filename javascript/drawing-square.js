@@ -23,7 +23,7 @@ class DrawingSquare extends PaintFunction {
         this.contextDraft.strokeRect(
           this.origX,
           this.origY,
-          coord[1] - this.origY,
+          coord[0] - this.origX,
           coord[1] - this.origY
         );
       }
