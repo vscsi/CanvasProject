@@ -27,10 +27,10 @@ $("#canvas-draft").mousedown(function (e) {
 $("#canvas-draft").mousemove(function (e) {
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
+  currentFunction.onMouseMove([mouseX, mouseY], e);
   if (dragging) {
     currentFunction.onDragging([mouseX, mouseY], e);
   }
-  currentFunction.onMouseMove([mouseX, mouseY], e);
 });
 
 $("#canvas-draft").mouseup(function (e) {

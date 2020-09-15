@@ -7,7 +7,7 @@ class DrawingLine extends PaintFunction {
   constructor(contextReal, contextDraft) {
     super();
     this.contextReal = contextReal;
-    this.contextDraft = contextDraft;
+    // this.contextDraft = contextDraft;
   }
 
   onMouseDown(coord, event) {
@@ -18,12 +18,13 @@ class DrawingLine extends PaintFunction {
     this.origY = coord[1];
   }
   onDragging(coord, event) {
-    // this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    // this.contextDraft.beginPath();
-    // this.contextDraft.strokeStyle = currentDrawColor;
-    // this.contextDraft.moveTo(coord[0],coord[1]);
-    // this.contextDraft.lineTo(this.origX,this.origY);
-    // this.contextDraft.stroke();
+    contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+    contextDraft.beginPath();
+    contextDraft.strokeStyle = currentDrawColor;
+    contextDraft.lineWidth = currentBrushSize;
+    contextDraft.moveTo(coord[0],coord[1]);
+    contextDraft.lineTo(this.origX,this.origY);
+    contextDraft.stroke();
   }
 
   onMouseMove() {}
