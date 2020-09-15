@@ -78,3 +78,13 @@ $( ".size-picker" ).click(function() {
     currentBrushSize = 10;
   };
 });
+
+//cursor tracker with coordinates     *need to add canvas element detector to hide coords outside of canvas
+$(document).bind('mousemove', function(e){
+  $('#mouse-coords').css({
+     left:  e.offsetX + 18,
+     top:   e.offsetY + 18
+  });
+  $('#mouse-coords').text(`x:${e.offsetX} y:${e.offsetY}`);
+});
+

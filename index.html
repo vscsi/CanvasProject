@@ -17,8 +17,57 @@
    
   </head>
   <body class="container">
-    <h1>Canvas Application</h1>
+     <div class="toolbox-container-left">
+       
+      <div class="draw-tools-container">
+        <div class="toolbox-titles"><p>Drawing Tools</p></div>
+        <!-- The drawing brush button  -->
+        <span class="btn-toolbox tool-row-2" id="tool-brush"><img src="./assets/icons/brush.png"></span> 
+         <!-- The tool eraser button  -->
+        <span class="btn-toolbox tool-row-2" id="tool-eraser"><img src="./assets/icons/eraser.png"></span> 
+        <!-- The drawing square button  -->
+        <span class="btn-toolbox" id="drawing-square"><img src="./assets/icons/square.png"></span> 
+        <!-- The drawing rectangle button  -->
+        <span class="btn-toolbox" id="drawing-rectangle"><img src="./assets/icons/rectangle.png"></span>
+        <!-- The drawing circle button  -->
+        <span class="btn-toolbox" id="drawing-circle"><img src="./assets/icons/circle.png"></span> 
+        <!-- The drawing line button  -->
+        <span class="btn-toolbox" id="drawing-line"><img src="./assets/icons/linear.png"></span> 
+        <!-- The drawing quadratic line 1 button  -->
+        <span class="btn-toolbox" id="quadratic-line-1"><img src="./assets/icons/quad1.png"></span> 
+        <!-- The drawing quadratic line 2 button  -->
+        <span class="btn-toolbox" id="quadratic-line-2"><img src="./assets/icons/quad2.png"></span> 
+      </div>
+
+      <div class="brush-size-tool-container">
+         <!-- Brush size picker  -->
+        <div class="size-picker btn-toolbox" id="size-1">1</div>
+        <div class="size-picker btn-toolbox" id="size-2">2</div>
+        <div class="size-picker btn-toolbox" id="size-3">3</div>
+      </div>
+
+      <div class="color-tool-container">
+        <!-- Simple color picker  -->
+       <div class="color-picker btn-toolbox" id="color-picker-red" ></div>
+       <div class="color-picker btn-toolbox" id="color-picker-blue"></div>
+       <div class="color-picker btn-toolbox" id="color-picker-green" ></div>
+     </div>
+     
+      <div class="clear-container">
+         <!-- The clear button  -->
+        <span class="btn btn-info fa fa-square" id="tool-clear" onclick="clearFunction()">CLEAR</span> 
+      </div>
+
+      <div class="utilities-container">
+         <!-- Download image button -->
+        <span class="btn-toolbox" id="save"><img src="./assets/icons/save.png"></span>
+      </div>
+     </div>
+
+    <h1 id="canvas-header">Online Canvas</h1>
     <div id="canvas-container">
+      <!-- cursor UI -->
+      <div id="mouse-coords">(x:-, y:-)</div>
       <canvas
         id="canvas-real"
         class="canvas"
@@ -32,32 +81,39 @@
         height="720px"
       ></canvas>
     </div>
-    <div class="buttons">
-      <!-- Simple color picker  -->
+
+   
+
+    <!-- <div class="buttons">
+      Brush Size picker 
       <div class="size-picker" id="size-1">1</div>
       <div class="size-picker" id="size-2">2</div>
       <div class="size-picker" id="size-3">3</div>
-      <!-- Simple color picker  -->
+      Simple color picker 
       <div class="color-picker" id="color-picker-red" ></div>
       <div class="color-picker" id="color-picker-blue"></div>
       <div class="color-picker" id="color-picker-green" ></div>
-      <!-- The drawing rectangle button  -->
+      The drawing rectangle button 
       <span class="btn btn-primary fa fa-square" id="drawing-rectangle">Draw Rectangle</span>
-      <!-- The drawing line button  -->
+      The drawing brush button 
       <span class="btn btn-info fa fa-paint-brush" id="tool-brush">Brush</span> 
-      <!-- The drawing line button  -->
+      The drawing line button 
       <span class="btn btn-info fa fa-paint-brush" id="drawing-line">Draw Straight Line</span> 
-      <!-- The drawing line button  -->
+      The drawing quadratic line 1 button 
+      <span class="btn btn-info fa fa-paint-brush" id="quadratic-line-1">Quadratic Line 1</span> 
+      The drawing quadratic line 2 button 
+      <span class="btn btn-info fa fa-paint-brush" id="quadratic-line-2">Quadratic Line 2</span> 
+      The drawing square button 
       <span class="btn btn-info fa fa-square" id="drawing-square">Draw Square</span> 
-      <!-- The drawing circle button  -->
+      The drawing circle button 
       <span class="btn btn-info fa fa-square" id="drawing-circle">Draw Circle</span> 
-      <!-- The clear button  -->
+      The clear button 
       <span class="btn btn-info fa fa-square" id="tool-clear" onclick="clearFunction()">Clear</span> 
-      <!-- The tool eraser button  -->
+      The tool eraser button 
       <span class="btn btn-info fa fa-paint-brush" id="tool-eraser">Eraser</span> 
-      <!-- Download image button -->
+      Download image button
       <span class="btn btn-info fa fa-paint-brush" id="save">Save</span> 
-    </div>  
+    </div>   -->
 
 
 
@@ -88,6 +144,20 @@
     <!-- The drawing line functionality  -->
     <script
       src="./javascript/drawing-line.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+    <!-- The drawing quadratic line 1 functionality  -->
+    <script
+      src="./javascript/quadratic-line-1.js"
+      type="text/javascript"
+      async
+      defer
+    ></script>
+    <!-- The drawing quadratic line 2 functionality  -->
+    <script
+      src="./javascript/quadratic-line-2.js"
       type="text/javascript"
       async
       defer
@@ -149,6 +219,12 @@
       }); 
       $("#drawing-line").click(() => {
         currentFunction = new DrawingLine(contextReal);
+      });  
+      $("#quadratic-line-1").click(() => {
+        currentFunction = new QuadraticLine1(contextReal, contextDraft);
+      });  
+      $("#quadratic-line-2").click(() => {
+        currentFunction = new QuadraticLine2(contextReal, contextDraft);
       });  
       $("#drawing-square").click(() => {
         currentFunction = new DrawingSquare(contextReal, contextDraft);
