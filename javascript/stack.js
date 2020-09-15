@@ -12,7 +12,6 @@ redoStack = [];
 
 // load() is to commit all the shapes in stack[0]
 const load = (context) => {
-    console.log("load is called");
     context.clearRect(0, 0, 10000, 10000);
     for (const key in stack[0]) {
         stack[0][key].commit()

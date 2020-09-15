@@ -75,7 +75,9 @@ class Rect {
         };
 
         // clearRect can be used as the erasor
-        if (this.type === "clear") {this.context.clearRect(this.startX, this.startY, this.endX-this.startX, this.endY-this.startY)};
+        if (this.type === "clear") {
+            this.context.clearRect(this.startX, this.startY, this.endX-this.startX, this.endY-this.startY)
+        };
     }
 };
 
@@ -104,3 +106,32 @@ class Square {
         };
     }
 };
+
+class Brush {
+    constructor(options = {}) {
+        this.x = [];
+        this.y = [];
+        this.context = options.context;
+        this.strokeStyle = options.strokeStyle;
+        this.lineWidth = options.lineWidth;
+    };
+
+    append = (x, y) => {
+        this.x.push(x);
+        this.y.push(y);
+    };
+
+    commit = () => {
+        this.context.strokeStyle = this.strokeStyle;
+        this.context.lineJoin = "round";
+        this.context.lineWidth = this.lineWidth;
+        this.context.beginPath();
+        this.context.moveTo(this.x[0], this.y[0]);
+        for (var i=1; i < this.x.length; i++) {
+            this.context.lineTo(this.x[i], this.y[i]);
+            this.context.moveTo(this.x[i], this.y[i]);
+            this.context.closePath();
+            this.context.stroke();
+        };
+    };
+}
