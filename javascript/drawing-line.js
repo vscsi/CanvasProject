@@ -11,11 +11,9 @@ class DrawingLine extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.strokeStyle = currentDrawColor;
-    this.contextReal.lineWidth = currentBrushSize;
-    // this.contextDraft.lineWidth = currentBrushSize;
     this.origX = coord[0];
     this.origY = coord[1];
+    
   }
   onDragging(coord, event) {
     contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
@@ -37,6 +35,8 @@ class DrawingLine extends PaintFunction {
     // this.contextReal.lineTo(this.origX,this.origY);
     // this.contextReal.stroke();
   }
-  onMouseLeave() {}
+  onMouseLeave() {
+    contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
+  }
   onMouseEnter() {}
 }
