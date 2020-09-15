@@ -218,7 +218,8 @@
         currentFunction = new DrawingCircle(contextReal, contextDraft);
       });
       $("#tool-clear").click(() => {
-        currentFunction = new ToolClear(contextReal, contextDraft);
+        // currentFunction = new ToolClear(contextReal, contextDraft);
+        clearFunction()
       });
       $("#tool-eraser").click(() => {
         currentFunction = new ToolEraser(contextReal);

@@ -29,3 +29,13 @@ const drawStrokeSquare = (startX, startY, width, type="stroke", strokeStyle, lin
     currentInstance[currentInstanceIndex] = new Square(startX, startY, width, type, strokeStyle, lineWidth, fillStyle, context);
     refresh(context)
 };
+
+const drawBrushInit = (x, y, strokeStyle, lineWidth, context) => {
+    currentInstance[currentInstanceIndex] = new Brush({context : context, strokeStyle : strokeStyle, lineWidth : lineWidth});
+    currentInstance[currentInstanceIndex].append(x, y);
+    // refresh or not? no, refresh will increment the currentInstanceIndex
+};
+
+const drawBrushDrag = (x, y) => {
+    currentInstance[currentInstanceIndex].append(x, y);
+};
