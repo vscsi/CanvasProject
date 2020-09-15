@@ -17,13 +17,22 @@ class ToolEraser extends PaintFunction {
       this.context.beginPath();
       this.context.moveTo(coord[0], coord[1]);
       this.draw(coord[0], coord[1]);
+
+       // script for stack
+       drawBrushInit(coord[0], coord[1], this.context.strokeStyle, this.context.lineWidth, this.context);
     }
     onDragging(coord, event) {
       this.draw(coord[0], coord[1]);
+
+      // script for stack
+      drawBrushDrag(coord[0], coord[1], this.context);
     }
   
     onMouseMove() {}
-    onMouseUp() {}
+    onMouseUp() {
+      // script for stack
+      refresh(this.context)
+    }
     onMouseLeave() {}
     onMouseEnter() {}
   
