@@ -44,6 +44,10 @@ p {
   #canvas-draft {
     background-color: transparent;
   }
+
+  #canvas-draft2 {
+    background-color: transparent;
+  }
   
   #mouse-coords{
     position: absolute;

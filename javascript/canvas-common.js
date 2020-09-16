@@ -7,11 +7,13 @@ let canvasReal = document.getElementById("canvas-real");
 let contextReal = canvasReal.getContext("2d");
 let canvasDraft = document.getElementById("canvas-draft");
 let contextDraft = canvasDraft.getContext("2d");
+let canvasDraft2 = document.getElementById("canvas-draft2");
+let contextDraft2 = canvasDraft.getContext("2d");
 let currentFunction;
 let dragging = false;
 let currentBgColor = 'white';
+let currentBrushSize = 2;
 let currentDrawColor = "black";
-let currentBrushSize = 5;
 
 /***** setting background white for canvas *******/ 
 contextReal.fillStyle = 'white';
