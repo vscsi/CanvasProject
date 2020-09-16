@@ -16,6 +16,9 @@ const load = (context) => {
     for (const key in stack[0]) {
         stack[0][key].commit()
     };
+    // Shape Selector Events
+    loadShapeSelector();
+    changeFillStyle();
 };
 
 // undo is done by shift()ing the stack, then load again

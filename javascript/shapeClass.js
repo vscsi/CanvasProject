@@ -1,6 +1,7 @@
 class Line {
     // instantiating a new Line saves the coordinates and color(default: black), does not actually draw it yet
     constructor (startX, startY, endX, endY, strokeStyle="black", lineWidth=2, context) {
+        this.name = "line";
         this.startX = startX;
         this.startY = startY;
         this.endX = endX;
@@ -22,16 +23,30 @@ class Line {
 };
 
 class Circle {
-    constructor (centerX, centerY, radiusX, radiusY, type="stroke", strokeStyle="black", lineWidth=2, fillStyle="black", context) {
-        this.centerX = centerX;
-        this.centerY = centerY;
-        this.radiusX = radiusX;
-        this.radiusY = radiusY;
-        this.type = type;
-        this.strokeStyle = strokeStyle;
-        this.fillStyle = fillStyle;
-        this.context = context;
-        this.lineWidth = lineWidth;
+    // constructor (centerX, centerY, radiusX, radiusY, type="stroke", strokeStyle="black", lineWidth=2, fillStyle="black", context) {
+    //     this.name = `${type} circle`;
+    //     this.centerX = centerX;
+    //     this.centerY = centerY;
+    //     this.radiusX = radiusX;
+    //     this.radiusY = radiusY;
+    //     this.type = type;
+    //     this.strokeStyle = strokeStyle;
+    //     this.fillStyle = fillStyle;
+    //     this.context = context;
+    //     this.lineWidth = lineWidth;
+    // };
+
+    constructor (options) {
+        this.name = `${options.type} circle`;
+        this.centerX = options.centerX;
+        this.centerY = options.centerY;
+        this.radiusX = options.radiusX;
+        this.radiusY = options.radiusY;
+        this.type = options.type;
+        this.strokeStyle = options.strokeStyle;
+        this.fillStyle = options.fillStyle;
+        this.context = options.context;
+        this.lineWidth = options.lineWidth;
     };
 
     commit = () => {
@@ -50,17 +65,31 @@ class Circle {
 
 // same thing for rectangles
 class Rect {
-    constructor (startX, startY, endX, endY, type="fill", strokeStyle="black", lineWidth=2, fillStyle="black", context) {
-        this.startX = startX;
-        this.startY = startY;
-        this.endX = endX;   
-        this.endY = endY;
-        this.strokeStyle = strokeStyle;
-        this.lineWidth = lineWidth;
-        this.fillStyle = fillStyle;
-        this.type = type;
-        this.context = context;
-    };
+    // constructor (startX, startY, endX, endY, type="fill", strokeStyle="black", lineWidth=2, fillStyle="black", context) {
+    //     this.name = `${type} rectangle`
+    //     this.startX = startX;
+    //     this.startY = startY;
+    //     this.endX = endX;   
+    //     this.endY = endY;
+    //     this.strokeStyle = strokeStyle;
+    //     this.lineWidth = lineWidth;
+    //     this.fillStyle = fillStyle;
+    //     this.type = type;
+    //     this.context = context;
+    // };
+
+    constructor (options) {
+        this.name = `${options.type} rectangle`
+        this.startX = options.startX;
+        this.startY = options.startY;
+        this.endX = options.endX;   
+        this.endY = options.endY;
+        this.strokeStyle = options.strokeStyle;
+        this.lineWidth = options.lineWidth;
+        this.fillStyle = options.fillStyle;
+        this.type = options.type;
+        this.context = options.context;
+    }
 
     commit = () => {
         this.context.fillStyle = this.color;
@@ -82,15 +111,28 @@ class Rect {
 };
 
 class Square {
-    constructor (startX, startY, width, type="fill", strokeStyle="black", lineWidth=2, fillStyle="black", context) {
-        this.startX = startX;
-        this.startY = startY;
-        this.width = width;
-        this.type = type;
-        this.strokeStyle = strokeStyle;
-        this.lineWidth = lineWidth;
-        this.fillStyle = fillStyle;
-        this.context = context;
+    // constructor (startX, startY, width, type="fill", strokeStyle="black", lineWidth=2, fillStyle="black", context) {
+    //     this.name = "square";
+    //     this.startX = startX;
+    //     this.startY = startY;
+    //     this.width = width;
+    //     this.type = type;
+    //     this.strokeStyle = strokeStyle;
+    //     this.lineWidth = lineWidth;
+    //     this.fillStyle = fillStyle;
+    //     this.context = context;
+    // };
+
+    constructor (options) {
+        this.name = "square";
+        this.startX = options.startX;
+        this.startY = options.startY;
+        this.width = options.width;
+        this.type = options.type;
+        this.strokeStyle = options.strokeStyle;
+        this.lineWidth = options.lineWidth;
+        this.fillStyle = options.fillStyle;
+        this.context = options.context;
     };
 
     commit = () => {
@@ -109,6 +151,7 @@ class Square {
 
 class Brush {
     constructor(options = {}) {
+        this.name = "brush";
         this.x = [];
         this.y = [];
         this.context = options.context;

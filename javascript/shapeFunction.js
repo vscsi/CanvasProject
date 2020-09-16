@@ -1,10 +1,10 @@
 const drawFillRect = (startX, startY, endX, endY, type="fill", strokeStyle="black", lineWidth=2, fillStyle="black", context) => {
-    currentInstance[currentInstanceIndex] = new Rect(startX, startY, endX, endY, type, strokeStyle, lineWidth, fillStyle, context);
+    currentInstance[currentInstanceIndex] = new Rect({startX : startX, startY : startY, endX : endX, endY : endY, type : type, strokeStyle : strokeStyle , lineWidth : lineWidth, fillStyle : fillStyle, context : context});
     refresh(context)
 };
 
 const drawStrokeRect = (startX, startY, endX, endY, type="stroke", strokeStyle="black", lineWidth=2, fillStyle="black", context) => {
-    currentInstance[currentInstanceIndex] = new Rect(startX, startY, endX, endY, type, strokeStyle, lineWidth, fillStyle, context);
+    currentInstance[currentInstanceIndex] = new Rect({startX : startX, startY : startY, endX : endX, endY : endY, type : type, strokeStyle : strokeStyle , lineWidth : lineWidth, fillStyle : fillStyle, context : context});
     refresh(context)
 };
 
@@ -14,19 +14,19 @@ const drawStraightLine = (startX, startY, endX, endY, strokeStyle, lineWidth, co
 };
 
 const drawCircle = (centerX, centerY, radiusX, radiusY, type, strokeStyle, lineWidth, fillStyle, context) => {
-    currentInstance[currentInstanceIndex] = new Circle(centerX, centerY, radiusX, radiusY, type, strokeStyle, lineWidth, fillStyle, context);
+    currentInstance[currentInstanceIndex] = new Circle({centerX: centerX, centerY: centerY, radiusX: radiusX, radiusY: radiusY, type: type, strokeStyle: strokeStyle, lineWidth: lineWidth, fillStyle: fillStyle, context: context});
     refresh(context)
 };
 
 // constructor (startX, startY, width, type="fill", strokeStyle="black", lineWidth=2, fillStyle="black", context)
 
 const drawFillSquare = (startX, startY, width, type="fill", strokeStyle, lineWidth, fillStyle, context) => {
-    currentInstance[currentInstanceIndex] = new Square(startX, startY, width, type, strokeStyle, lineWidth, fillStyle, context);
+    currentInstance[currentInstanceIndex] = new Square({startX: startX, startY: startY, width: width, type: type, strokeStyle: strokeStyle, lineWidth: lineWidth, fillStyle: fillStyle, context: context});
     refresh(context)
 };
 
 const drawStrokeSquare = (startX, startY, width, type="stroke", strokeStyle, lineWidth, fillStyle, context) => {
-    currentInstance[currentInstanceIndex] = new Square(startX, startY, width, type, strokeStyle, lineWidth, fillStyle, context);
+    currentInstance[currentInstanceIndex] = new Square({startX: startX, startY: startY, width: width, type: type, strokeStyle: strokeStyle, lineWidth: lineWidth, fillStyle: fillStyle, context: context});
     refresh(context)
 };
 

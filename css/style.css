@@ -218,3 +218,11 @@ p {
     z-index: 1;
 }
 
+/* =================== SHAPE SELECTOR =================== */
+
+#shapeSelector {
+  width:500px;
+  height: 1000px;
+  background-color: white;
+  float: right
+}
