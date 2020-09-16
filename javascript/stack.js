@@ -3,6 +3,8 @@ currentInstance = {0: ""};
 currentInstanceIndex = 0;
 instances = {0: ""};
 instancesIndex = 1;
+var undo_count = 0;
+var redo_count = 0;
 
 // instances are unshift() to the stack for loading
 // each time changes is made (drawing a new shape, undoing or change colors), new instances is created and unshift() to the stack
@@ -24,7 +26,8 @@ const load = (context) => {
 // undo is done by shift()ing the stack, then load again
 const undo = (context) => {
     if (stack.length === 1) {return};
-    currentInstanceIndex -= 1;
+    undo_count ++;
+    currentInstanceIndex --;
     redoStack.unshift(stack.shift());
     currentInstance = {...stack[0]};
     load(context);
@@ -32,9 +35,11 @@ const undo = (context) => {
 
 const redo = (context) => {
     if (redoStack.length === 0) {return};
+    redo_count ++;
     stack.unshift(redoStack.shift());
     currentInstance = {...stack[0]};
     load(context);
+    currentInstanceIndex ++;
 };
 
 // this is to do with the z-index.
@@ -45,6 +50,11 @@ const swap = (original, swapTo) => {
 };
 
 const refresh = (context) => {
+    if (undo_count > redo_count) {
+        redoStack = [];
+        undo_count = 0;
+        redo_count = 0;
+    };
     currentInstanceIndex ++;
     instances[instancesIndex] = {...currentInstance};
     stack.unshift(instances[instancesIndex]);
