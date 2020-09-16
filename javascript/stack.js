@@ -2,7 +2,7 @@
 currentInstance = {0: ""};
 currentInstanceIndex = 0;
 instances = {0: ""};
-instancesIndex = 0;
+instancesIndex = 1;
 
 // instances are unshift() to the stack for loading
 // each time changes is made (drawing a new shape, undoing or change colors), new instances is created and unshift() to the stack
@@ -23,12 +23,15 @@ const load = (context) => {
 
 // undo is done by shift()ing the stack, then load again
 const undo = (context) => {
+    if (stack.length === 1) {return};
+    currentInstanceIndex -= 1;
     redoStack.unshift(stack.shift());
     currentInstance = {...stack[0]};
     load(context);
 };
 
 const redo = (context) => {
+    if (redoStack.length === 0) {return};
     stack.unshift(redoStack.shift());
     currentInstance = {...stack[0]};
     load(context);
