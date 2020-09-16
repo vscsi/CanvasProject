@@ -1,5 +1,3 @@
-var selectedShape;
-
 const loadShapeSelector = () => {
     $("#shapeList").empty();
     for (var i = currentInstanceIndex - 1; i >= 0; i--) {
