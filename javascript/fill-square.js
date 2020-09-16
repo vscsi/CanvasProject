@@ -1,9 +1,9 @@
 /**********************************************
- * Drawing Square Functionality
+ * Fill square Functionality
  * ==================================
  ***********************************************/
 // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
-class DrawingSquare extends PaintFunction {
+class FillSquare extends PaintFunction {
     constructor(contextReal, contextDraft) {
       super();
       this.contextReal = contextReal;
@@ -11,16 +11,16 @@ class DrawingSquare extends PaintFunction {
     }
   
     onMouseDown(coord, event) {
-      this.contextReal.strokeStyle = currentDrawColor;
+      this.contextReal.fillStyle = currentDrawColor;
       this.contextReal.lineWidth = currentBrushSize;
       this.origX = coord[0];
       this.origY = coord[1];
     }
     onDragging(coord, event) {
-        this.contextDraft.strokeStyle = currentDrawColor;
+        this.contextDraft.fillStyle = currentDrawColor;
         this.contextDraft.lineWidth = currentBrushSize;
         this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-        this.contextDraft.strokeRect(
+        this.contextDraft.fillRect(
           this.origX,
           this.origY,
           coord[0] - this.origX,
@@ -31,13 +31,7 @@ class DrawingSquare extends PaintFunction {
       onMouseMove() {}
       onMouseUp(coord) {
         this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-        drawStrokeSquare(this.origX, this.origY, coord[1] - this.origY, "stroke", this.contextReal.strokeStyle, this.contextReal.lineWidth, "#", this.contextReal)
-        // this.contextReal.strokeRect(
-        //   this.origX,
-        //   this.origY,
-        //   coord[1] - this.origY,
-        //   coord[1] - this.origY
-        // );
+        drawFillSquare(this.origX, this.origY, coord[1] - this.origY, "fill", this.contextReal.fillStyle, this.contextReal.lineWidth, currentDrawColor, this.contextReal)
       }
     onMouseLeave() {}
     onMouseEnter() {}
