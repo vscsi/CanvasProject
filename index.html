@@ -1,170 +1,170 @@
 <!DOCTYPE html>
 <html class="no-js">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"/>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel='stylesheet' href="css/spectrum.css">
 
-   
-  </head>
-  <body class="container">
-     <div class="toolbox-container-left">
-       
-      <div class="draw-tools-container">
-        <div class="toolbox-titles"><p>Drawing Tools</p></div>
-        <!-- The drawing brush button  -->
-        <span class="btn-toolbox tool-row-2" id="tool-brush"><img src="./assets/icons/brush.png"></span> 
-         <!-- The tool eraser button  -->
-        <span class="btn-toolbox tool-row-2" id="tool-eraser"><img src="./assets/icons/eraser.png"></span> 
-        <!-- The drawing square button  -->
-        <span class="btn-toolbox" id="drawing-square"><img src="./assets/icons/square.png"></span> 
-        <!-- The drawing rectangle button  -->
-        <span class="btn-toolbox" id="drawing-rectangle"><img src="./assets/icons/rectangle.png"></span>
-        <!-- The drawing circle button  -->
-        <span class="btn-toolbox" id="drawing-circle"><img src="./assets/icons/circle.png"></span> 
-        <!-- The drawing line button  -->
-        <span class="btn-toolbox" id="drawing-line"><img src="./assets/icons/linear.png"></span> 
-        <!-- The drawing quadratic line 1 button  -->
-        <span class="btn-toolbox" id="quadratic-line-1"><img src="./assets/icons/quad1.png"></span> 
-        <!-- The drawing quadratic line 2 button  -->
-        <span class="btn-toolbox" id="quadratic-line-2"><img src="./assets/icons/quad2.png"></span> 
-        <!-- The tool text button  -->
-        <span class="btn-toolbox" id="text"><img src="./assets/icons/text.png"></span> 
-        <!-- The drawing polygon button  -->
-        <span class="btn-toolbox" id="drawing-polygon"><img src="./assets/icons/polygon.png"></span> 
-        <!-- tempt fill rect button-->
-        <span class="btn-toolbox" id="fillrect">fill rect</span>
-        <!-- tempt fill rect button-->
-        <span class="btn-toolbox" id="fillsquare">fill square</span>
-        <!-- tempt fill circle button-->
-        <span class="btn-toolbox" id="fillcircle">fill circle</span>
-      </div>
-       
-      <div class="brush-size-tool-container">
-        <!-- Brush size picker  -->
-        <div class="size-picker btn-toolbox" id="size-1">1</div>
-        <div class="size-picker btn-toolbox" id="size-2">2</div>
-        <div class="size-picker btn-toolbox" id="size-3">3</div>
-      </div>
-      <div class="color-tool-container">
-        <!-- Simple color picker  -->
-       <div class="color-picker btn-toolbox" id="color-picker-red" ></div>
-       <div class="color-picker btn-toolbox" id="color-picker-blue"></div>
-       <div class="color-picker btn-toolbox" id="color-picker-green" ></div>
-        <!-- Color picker -->
-        <input id="color-picker" value='#000' />
-     </div>
-     
-      <div class="clear-container">
-         <!-- The clear button  -->
-        <span class="btn " id="tool-clear" onclick="clearFunction()">CLEAR</span> 
-      </div>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title></title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel='stylesheet' href="css/spectrum.css">
 
-      <div class="utilities-container">
-         <!-- Download image button -->
-        <span class="btn-toolbox" id="save"><img src="./assets/icons/save.png"></span>
-        <!-- Undo button -->
-        <span class="btn-toolbox" id="undo" onclick="undo(contextReal)"><img src="./assets/icons/undo.png"></span>
-        <!-- Redo button -->
-        <span class="btn-toolbox" id="redo" onclick="redo(contextReal)"><img src="./assets/icons/redo.png"></span>
-      </div>
-     </div>
 
-    <h1 id="canvas-header">Online Canvas</h1>
-    <div id="canvas-container">
-      <!-- cursor UI -->
-      <div id="mouse-coords">(x:-, y:-)</div>
-      <canvas id="canvas-real" class="canvas" width="1280px" height="720px"></canvas>
-      <canvas id="canvas-draft" class="canvas" width="1280px" height="720px"></canvas>
-      <!-- <canvas id="canvas-draft2" class="canvas" width="1280px" height="720px"></canvas> -->
+</head>
+
+<body class="container">
+  <div class="toolbox-container-left">
+
+    <div class="draw-tools-container">
+      <div class="toolbox-titles">
+        <p>Drawing Tools</p>
+      </div>
+      <!-- The drawing brush button  -->
+      <span class="btn-toolbox tool-row-2" id="tool-brush"><img src="./assets/icons/brush.png"></span>
+      <!-- The tool eraser button  -->
+      <span class="btn-toolbox tool-row-2" id="tool-eraser"><img src="./assets/icons/eraser.png"></span>
+      <!-- The drawing square button  -->
+      <span class="btn-toolbox" id="drawing-square"><img src="./assets/icons/square.png"></span>
+      <!-- The drawing rectangle button  -->
+      <span class="btn-toolbox" id="drawing-rectangle"><img src="./assets/icons/rectangle.png"></span>
+      <!-- The drawing circle button  -->
+      <span class="btn-toolbox" id="drawing-circle"><img src="./assets/icons/circle.png"></span>
+      <!-- The drawing line button  -->
+      <span class="btn-toolbox" id="drawing-line"><img src="./assets/icons/linear.png"></span>
+      <!-- The drawing quadratic line 1 button  -->
+      <span class="btn-toolbox" id="quadratic-line-1"><img src="./assets/icons/quad1.png"></span>
+      <!-- The drawing quadratic line 2 button  -->
+      <span class="btn-toolbox" id="quadratic-line-2"><img src="./assets/icons/quad2.png"></span>
+      <!-- The tool text button  -->
+      <span class="btn-toolbox" id="text"><img src="./assets/icons/text.png"></span>
+      <!-- The drawing polygon button  -->
+      <span class="btn-toolbox" id="drawing-polygon"><img src="./assets/icons/polygon.png"></span>
+      <!-- tempt fill rect button-->
+      <span class="btn-toolbox" id="fillrect">fill rect</span>
+      <!-- tempt fill rect button-->
+      <span class="btn-toolbox" id="fillsquare">fill square</span>
+      <!-- tempt fill circle button-->
+      <span class="btn-toolbox" id="fillcircle">fill circle</span>
     </div>
     <div id="shapeSelector">
       <ul id="shapeList"></ul>
     </div>
 
+    <div class="brush-size-tool-container">
+      <!-- Brush size picker  -->
+      <!-- <div class="size-picker btn-toolbox" id="size-1">1</div>
+      <div class="size-picker btn-toolbox" id="size-2">2</div>
+      <div class="size-picker btn-toolbox" id="size-3">3</div> -->
+      <p>Brush and Text size : <span id="brushSize"></span></p>
+      <input class="pointer" type="range" id="brushSizeGlider" min="2" max="30" value="2">
+    </div>
+    <div class="color-tool-container">
+      <!-- Simple color picker  -->
+      <div class="color-picker btn-toolbox" id="color-picker-red"></div>
+      <div class="color-picker btn-toolbox" id="color-picker-blue"></div>
+      <div class="color-picker btn-toolbox" id="color-picker-green"></div>
+      <!-- Color picker -->
+      <input id="color-picker" value='#000' />
+    </div>
+
+    <div class="clear-container">
+      <!-- The clear button  -->
+      <span class="btn " id="tool-clear" onclick="clearFunction()">CLEAR</span>
+    </div>
+
+    <div class="utilities-container">
+      <!-- Download image button -->
+      <span class="btn-toolbox" id="save"><img src="./assets/icons/save.png"></span>
+      <!-- Undo button -->
+      <span class="btn-toolbox" id="undo" onclick="undo(contextReal)"><img src="./assets/icons/undo.png"></span>
+      <!-- Redo button -->
+      <span class="btn-toolbox" id="redo" onclick="redo(contextReal)"><img src="./assets/icons/redo.png"></span>
+    </div>
+  </div>
 
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    
-    <!--Stack & Instance-->
-    <script src="./javascript/stack.js" type="text/javascript" async defer></script>
+  <h1 id="canvas-header">Online Canvas</h1>
+  <div id="canvas-container">
+    <!-- cursor UI -->
+    <div id="mouse-coords">(x:-, y:-)</div>
+    <canvas id="canvas-real" class="canvas" width="1280px" height="720px"></canvas>
+    <canvas id="canvas-draft" class="canvas" width="1280px" height="720px"></canvas>
+    <!-- <canvas id="canvas-draft2" class="canvas" width="1280px" height="720px"></canvas> -->
+  </div>
 
-    <!-- SHAPES -->
 
-    <!-- shape Selector -->
-    <script src="./javascript/shapeSelector.js" type="text/javascript" async defer></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
 
-    <script src="./javascript/shapeClass.js" type="text/javascript" async defer></script>
+  <!--Stack & Instance-->
+  <script src="./javascript/stack.js" type="text/javascript" async defer></script>
 
-    <script src="./javascript/shapeFunction.js" type="text/javascript" async defer></script>
+  <!-- SHAPES -->
+  <script src="./javascript/shapeClass.js" type="text/javascript" async defer></script>
 
-    <!--color picker -->
-    <script src="javascript/vendor/spectrum.js" type="text/javascript" async defer></script>
-    <script src="javascript/color-picker.js" type="text/javascript" async defer></script>
-    
-    <!-- SHAPES -->
-    <!-- The drawing functionality  -->
-    <script src="javascript/canvas-common.js" type="text/javascript" async defer></script>
+  <script src="./javascript/shapeFunction.js" type="text/javascript" async defer></script>
 
-    <!-- The tool brush functionality  -->
-    <script src="javascript/tool-brush.js" type="text/javascript" async defer></script>
-  
-    <!-- The drawing line functionality  -->
-    <script src="javascript/drawing-line.js" type="text/javascript" async defer></script>
-    
-    <!-- The drawing quadratic line 1 functionality  -->
-    <script src="javascript/quadratic-line-1.js" type="text/javascript" async defer></script>
+  <!--color picker -->
+  <script src="javascript/vendor/spectrum.js" type="text/javascript" async defer></script>
+  <script src="javascript/color-picker.js" type="text/javascript" async defer></script>
 
-    <!-- The drawing quadratic line 2 functionality  -->
-    <script src="javascript/quadratic-line-2.js" type="text/javascript" async defer></script>
+  <!-- SHAPES -->
+  <!-- The drawing functionality  -->
+  <script src="javascript/canvas-common.js" type="text/javascript" async defer></script>
 
-    <!-- The drawing rectangle functionality  -->
-    <script src="javascript/drawing-rectangle.js" type="text/javascript" async defer></script>
+  <!-- The tool brush functionality  -->
+  <script src="javascript/tool-brush.js" type="text/javascript" async defer></script>
 
-    <!-- The drawing square functionality  -->
-    <script src="javascript/drawing-square.js" type="text/javascript" async defer></script>
+  <!-- The drawing line functionality  -->
+  <script src="javascript/drawing-line.js" type="text/javascript" async defer></script>
 
-    <!-- The drawing circle functionality  -->
-    <script src="./javascript/drawing-circle.js" type="text/javascript" async defer></script>
-    <!-- The drawing line functionality  -->
-    <script src="./javascript/tool-eraser.js" type="text/javascript" async defer></script>
+  <!-- The drawing quadratic line 1 functionality  -->
+  <script src="javascript/quadratic-line-1.js" type="text/javascript" async defer></script>
+
+  <!-- The drawing quadratic line 2 functionality  -->
+  <script src="javascript/quadratic-line-2.js" type="text/javascript" async defer></script>
+
+  <!-- The drawing rectangle functionality  -->
+  <script src="javascript/drawing-rectangle.js" type="text/javascript" async defer></script>
+
+  <!-- The drawing square functionality  -->
+  <script src="javascript/drawing-square.js" type="text/javascript" async defer></script>
+
+  <!-- The drawing circle functionality  -->
+  <script src="./javascript/drawing-circle.js" type="text/javascript" async defer></script>
+  <!-- The drawing line functionality  -->
+  <script src="./javascript/tool-eraser.js" type="text/javascript" async defer></script>
 
   <!-- The fill rectangle functionality-->
   <script src="./javascript/fill-rectangle.js" type="text/javascript" async defer></script>
   <!-- The fill square functionality-->
   <script src="./javascript/fill-square.js" type="text/javascript" async defer></script>
- <!-- The fill circle functionality-->
- <script src="./javascript/fill-circle.js" type="text/javascript" async defer></script>
+  <!-- The fill circle functionality-->
+  <script src="./javascript/fill-circle.js" type="text/javascript" async defer></script>
 
-    <!-- Save image functionality -->
-    <script src="javascript/save-image.js" type="text/javascript"></script>
+  <!-- Save image functionality -->
+  <script src="javascript/save-image.js" type="text/javascript"></script>
 
-    <!-- Tool Text functionality -->
-    <script src="javascript/input-text.js" type="text/javascript" async defer></script>
+  <!-- Tool Text functionality -->
+  <script src="javascript/input-text.js" type="text/javascript" async defer></script>
 
-    <!-- The drawing polygon functionality  -->
-    <script src="./javascript/drawing-polygon.js" type="text/javascript" async defer></script>
+  <!-- The drawing polygon functionality  -->
+  <script src="./javascript/drawing-polygon.js" type="text/javascript" async defer></script>
 
-    <!-- TOOLS -->
-    <!-- The clear functionality  -->
-    <script src="./javascript/tool-clear.js" type="text/javascript" async defer></script>
+  <!-- TOOLS -->
+  <!-- The clear functionality  -->
+  <script src="./javascript/tool-clear.js" type="text/javascript" async defer></script>
 
-    <!-- initial background color-->
-    <script src="./javascript/initBackground.js" type="text/javascript" async defer></script>
+  <!-- initial background color-->
+  <script src="./javascript/initBackground.js" type="text/javascript" async defer></script>
 
-   
-  
+  <!-- brush size glider-->
+  <script src="./javascript/brushsizeglider.js" type="text/javascript" async defer></script>
 
   <!-- CONNECT BUTTONS AND SCRIPTS-->
   <script type="text/javascript">
