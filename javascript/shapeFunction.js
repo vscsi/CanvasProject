@@ -3,6 +3,11 @@ const drawFillRect = (startX, startY, endX, endY, type="fill", strokeStyle="blac
     refresh(context)
 };
 
+const drawBg = (startX, startY, endX, endY, type="fill", strokeStyle="black", lineWidth=2, fillStyle="black", context) => {
+    currentInstance[currentInstanceIndex] = new Background({startX : startX, startY : startY, endX : endX, endY : endY, type : type, strokeStyle : strokeStyle , lineWidth : lineWidth, fillStyle : fillStyle, context : context});
+    refresh(context)
+};
+
 const drawStrokeRect = (startX, startY, endX, endY, type="stroke", strokeStyle="black", lineWidth=2, fillStyle="black", context) => {
     currentInstance[currentInstanceIndex] = new Rect({startX : startX, startY : startY, endX : endX, endY : endY, type : type, strokeStyle : strokeStyle , lineWidth : lineWidth, fillStyle : fillStyle, context : context});
     refresh(context)
@@ -32,6 +37,12 @@ const drawStrokeSquare = (startX, startY, width, type="stroke", strokeStyle, lin
 
 const drawBrushInit = (x, y, strokeStyle, lineWidth, context) => {
     currentInstance[currentInstanceIndex] = new Brush({context : context, strokeStyle : strokeStyle, lineWidth : lineWidth});
+    currentInstance[currentInstanceIndex].append(x, y);
+    // refresh or not? no, refresh will increment the currentInstanceIndex
+};
+
+const drawErasorInit = (x, y, strokeStyle, lineWidth, context) => {
+    currentInstance[currentInstanceIndex] = new Erasor({context : context, strokeStyle : strokeStyle, lineWidth : lineWidth});
     currentInstance[currentInstanceIndex].append(x, y);
     // refresh or not? no, refresh will increment the currentInstanceIndex
 };
