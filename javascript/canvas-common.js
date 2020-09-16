@@ -12,8 +12,8 @@ let contextDraft2 = canvasDraft.getContext("2d");
 let currentFunction;
 let dragging = false;
 let currentBgColor = 'white';
-let currentDrawColor;
 let currentBrushSize = 2;
+let currentDrawColor = "black";
 
 /***** setting background white for canvas *******/ 
 contextReal.fillStyle = 'white';
