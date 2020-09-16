@@ -41,6 +41,12 @@
       <span class="btn-toolbox" id="quadratic-line-2"><img src="./assets/icons/quad2.png"></span>
       <!--temp text button-->
       <span class="btn-toolbox" id="text">Text</span>
+      <!-- tempt fill rect button-->
+      <span class="btn-toolbox" id="fillrect">fill rect</span>
+      <!-- tempt fill rect button-->
+      <span class="btn-toolbox" id="fillsquare">fill square</span>
+      <!-- tempt fill circle button-->
+      <span class="btn-toolbox" id="fillcircle">fill circle</span>
     </div>
 
     <div class="brush-size-tool-container">
@@ -116,6 +122,12 @@
   <script src="./javascript/drawing-circle.js" type="text/javascript" async defer></script>
   <!-- The drawing line functionality  -->
   <script src="./javascript/tool-eraser.js" type="text/javascript" async defer></script>
+  <!-- The fill rectangle functionality-->
+  <script src="./javascript/fill-rectangle.js" type="text/javascript" async defer></script>
+  <!-- The fill square functionality-->
+  <script src="./javascript/fill-square.js" type="text/javascript" async defer></script>
+ <!-- The fill circle functionality-->
+ <script src="./javascript/fill-circle.js" type="text/javascript" async defer></script>
 
 
   <!-- Save image functionality -->
@@ -165,6 +177,15 @@
       $("#text").click(() => {
         containInput = false;
         currentFunction = new DrawText(contextReal);
+      })
+      $("#fillrect").click(() => {
+        currentFunction = new FillRectangle(contextReal, contextDraft);
+      })
+      $("#fillsquare").click(() => {
+        currentFunction = new FillSquare(contextReal, contextDraft);
+      })
+      $("#fillcircle").click(() => {
+        currentFunction = new FillCircle(contextReal, contextDraft);
       })
 
 
