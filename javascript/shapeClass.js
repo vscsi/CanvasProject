@@ -134,4 +134,36 @@ class Brush {
             this.context.stroke();
         };
     };
+};
+
+class Quadline1 extends Brush{
+    constructor(options = {}) {
+        super(options);
+        this.name = "Quadline1"
+    };
+    append = (x, y) => {
+        this.x.push(x);
+        this.y.push(y);
+    };
+    commit = () => {
+        this.context.strokeStyle = this.strokeStyle;
+        this.context.lineWidth = this.lineWidth;
+        this.context.beginPath();
+        this.context.moveTo(this.x[0], this.y[0]);
+        contextReal.quadraticCurveTo(this.x[2], this.y[2], this.x[1], this.y[1]);
+        contextReal.stroke();
+    }
+};
+
+class Quadline2 extends Quadline1{
+    constructor(options = {}) {
+        super(options);
+        this.name = "Quadline2"
+    };
+    commit = () => {
+        this.context.beginPath();
+        this.context.moveTo(this.x[0], this.y[0]); // (x1, x2)
+        this.context.bezierCurveTo(this.x[2], this.y[2], this.x[3], this.y[3], this.x[1], this.y[1]); 
+        this.context.stroke();
+    }
 }

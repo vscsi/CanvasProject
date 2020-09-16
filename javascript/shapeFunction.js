@@ -39,3 +39,37 @@ const drawBrushInit = (x, y, strokeStyle, lineWidth, context) => {
 const drawBrushDrag = (x, y) => {
     currentInstance[currentInstanceIndex].append(x, y);
 };
+
+const drawQuadline1Init = (x, y, strokeStyle, lineWidth, context) => {
+    currentInstance[currentInstanceIndex] = new Quadline1({context: context, strokeStyle : strokeStyle, lineWidth: lineWidth});
+    currentInstance[currentInstanceIndex].append(x, y);
+};
+
+const drawQuadline1Drag = (x, y) => {
+    currentInstance[currentInstanceIndex].append(x, y);
+};
+
+const drawQuadline1End = (x, y, context) => {
+    currentInstance[currentInstanceIndex].append(x, y);
+    refresh(context)
+};
+
+const drawQuadline2Init = (x, y, strokeStyle, lineWidth, context) => {
+    currentInstance[currentInstanceIndex] = new Quadline2({context: context, strokeStyle : strokeStyle, lineWidth: lineWidth});
+    currentInstance[currentInstanceIndex].append(x, y);
+};
+
+const drawQuadline2Drag = (x, y) => {
+    currentInstance[currentInstanceIndex].append(x, y);
+};
+
+const drawQuadline2Drag2nd = (x, y) => {
+    // change (x3, y3)
+    // maybe not needed
+};
+
+const drawQuadline2End = (x, y, context) => {
+    // append (x4, y4)
+    currentInstance[currentInstanceIndex].append(x, y);
+    refresh(context)
+}
