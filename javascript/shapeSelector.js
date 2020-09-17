@@ -1,10 +1,16 @@
 const loadShapeSelector = () => {
     $("#shapeList").empty();
     for (var i = currentInstanceIndex - 1; i >= 0; i--) {
-        $("#shapeList").append(`<li id=shape${i} class="shapes">${currentInstance[i].name} ${i}</li>`);
-        $(`#shape${i}`).append(`<button class="changeStrokeStyle id="changeStrokeStyle${i}" index="${i}">a</button>`);
-        $(`#shape${i}`).append(`<button class="changeStrokeWidth" id="changeStrokeWidth${i}" index="${i}">b</button>`);
-        $(`#shape${i}`).append(`<button class="changeFillStyle" id="changeFillStyle${i}" index="${i}">c</button>`);
+        $("#shapeList").append(`<li id=shape${i} class="shapes">#${i+1}: ${currentInstance[i].name}</li>`);
+        $(`#shape${i}`).append(`
+            <div class="action-btn-container">
+                <span class="action-btn changeStrokeStyle" id="changeStrokeStyle${i}" index="${i}">a</span>
+                <span class="action-btn changeStrokeWidth" id="changeStrokeWidth${i}" index="${i}">b</span>
+                <span class="action-btn changeFillStyle" id="changeFillStyle${i}" index="${i}">c</span>
+            </div>
+            `);
+        // $(`#shape${i}`).append(`<span class="action-btn changeStrokeWidth" id="changeStrokeWidth${i}" index="${i}">b</span>`);
+        // $(`#shape${i}`).append(`<span class="action-btn changeFillStyle" id="changeFillStyle${i}" index="${i}">c</span>`);
     }; 
 };
 

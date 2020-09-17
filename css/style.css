@@ -41,11 +41,11 @@ p {
 /* =================== CANVAS =================== */
 
 #canvas-container {
-  height: 760px;
+  height: 810px;
   width: 1280px;
   position: absolute;
   right:2%;
-  top: 10%;
+  top: 4%;
   padding: 15px;
   padding-top: 20px;
   padding-bottom: 0;
@@ -126,18 +126,79 @@ p {
   color: #7a8397;
   font-size: 14px;
   letter-spacing: 0.7px;
-
 }
 
+.shapes {
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 16px 4px 14px;
+  padding: 2px 4px;
+  color: #7a8397;
+  font-size: 14px;
+  letter-spacing: 0.7px;
+  border-bottom: 0.5px solid rgb(230, 230, 230);
+  align-items: center;
+  margin: 2px 6px;
+}
 
+#shapeList {
+  list-style: none;
+  padding-left:0;
+}
+
+.action-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.action-btn {
+  height: 32px;
+  width: 36px;
+  border-radius: 3px;
+  background: #ecedf0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001,
+   inset 0px 0px 0px 0px #fff9,
+   inset 0px 0px 0px 0px #0001,
+   inset 0px 0px 0px 0px #fff9,        inset 0px 0px 0px 0px #0001;
+  transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+  font-size: 16px;
+  text-decoration: none;
+  color: #6d7587;
+  margin: 2px 6px;
+}
+
+.action-btn:hover{
+  transform: scale(1.015);
+  color: #363636;
+}
+
+.action-btn:active{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+  color: #363636;
+}
 
 /* =================== LEFT TOOL BAR =================== */
 
 .toolbox-container-left {
-  height: 48vh;
+  height: 500px;
   position: absolute;
   left: 4.5%;
-  top: 11%;
+  top: 4%;
   width: 360px;
   display: flex;
   flex-direction: column;
@@ -153,7 +214,6 @@ p {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-top: 8px;
   padding-bottom: 20px;
   border-bottom: 0.5px solid #ebecf0;
 }
@@ -166,15 +226,21 @@ p {
 .toolbox-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: start;
   margin: 1px 0;
+}
+
+.toolbox-row-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 2px;
 }
 
 #color-picker {
   margin: 6px 0;
   z-index:0;
 }
-
 
 .btn-toolbox {
     display: inline-block;
@@ -236,7 +302,7 @@ p {
   font-size: 16px;
   text-decoration: none;
   color: #6d7587;
-  margin: 12px 2px;
+  margin: 10px 4px;
 }
 
 .btn:hover{
@@ -252,8 +318,24 @@ p {
   color: #363636;
 }
 
+.toolbox-inner-row {
+  font-family: "Source Sans Pro", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 16px 4px 14px;
+  padding: 2px 4px;
+  color: #7a8397;
+  font-size: 14px;
+  letter-spacing: 0.7px;
+  border-bottom: 0.5px solid rgb(230, 230, 230);
+  align-items: center;
+  margin: 2px 6px;
+  width: 100%;
+}
+
+
 #tool-clear {
-  width: 78px;
+  width: 90px;
 }
 
 .color-tool-container{
@@ -479,10 +561,10 @@ p {
 
 /* =================== SHAPE SELECTOR =================== */
 
-#shapeSelector {
+/* #shapeSelector {
   width:500px;
   height: 1000px;
   background-color: white;
   float: right
-}
+} */
 
