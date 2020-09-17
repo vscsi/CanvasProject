@@ -1,5 +1,6 @@
 @keyframes fadeIn {
   0% {opacity:0;}
+  85% {opacity:0;}
   100% {opacity:1;}
 }
 
@@ -37,6 +38,43 @@ p {
 }
 
 
+/* =================== LOGO ANIMATION =================== */
+.logo-animation-container {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#logo {
+  opacity: 0;
+  -webkit-transform: scale(0.9, 0.9);
+          transform: scale(0.9, 0.9);
+}
+
+#lo {
+  fill: #8395a7;
+  -webkit-filter: drop-shadow(10px 10px 10px 10px rgba(136, 165, 191, 0.1));
+          filter: drop-shadow(10px 10px 10px 10px rgba(136, 165, 191, 0.1));
+  cursor: pointer;
+}
+
+.cir {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  -webkit-box-shadow: 10px 10px 10px 10px rgba(136, 165, 191, 0.1) inset, inset -10px -10px 10px #FFFFFF;
+          box-shadow: 10px 10px 10px 10px rgba(136, 165, 191, 0.1) inset, inset -10px -10px 10px #FFFFFF;
+}
+
 
 /* =================== CANVAS =================== */
 
@@ -73,7 +111,7 @@ p {
     display:flex;
 
     width: auto;
-    animation: fadeIn ease 4s;
+    animation: fadeIn ease 14s;
   }
   
   #canvas-draft {
@@ -94,6 +132,7 @@ p {
 
 
 .action-log-container {
+  animation: fadeIn ease 9s;
   height: 33%;
   position: absolute;
   left: 4.5%;
@@ -118,6 +157,7 @@ p {
 }
 
 #action-log-header {
+  animation: fadeIn ease 11s;
   margin-left:34%;
 }
 
@@ -131,6 +171,7 @@ p {
 }
 
 .shapes {
+  animation: fadeIn ease 11s;
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
   justify-content: space-between;
@@ -197,6 +238,7 @@ p {
 /* =================== LEFT TOOL BAR =================== */
 
 .toolbox-container-left {
+  animation: fadeIn ease 8s;
   height: 56%;
   position: absolute;
   left: 4.5%;
@@ -226,6 +268,7 @@ p {
 }
 
 .toolbox-row {
+  animation: fadeIn ease 10s;
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
@@ -233,6 +276,7 @@ p {
 }
 
 .toolbox-row-1 {
+  animation: fadeIn ease 10s;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -245,6 +289,7 @@ p {
 }
 
 .toolbox-row-2 {
+  animation: fadeIn ease 10s;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -257,6 +302,7 @@ p {
 }
 
 .btn-toolbox {
+  animation: fadeIn ease 10s;
     display: inline-block;
     border-radius: 1px;
     text-align: center;
@@ -294,6 +340,7 @@ p {
 }
 
 .btn {
+  animation: fadeIn ease 10.5s;
   height: 2.2rem;
   width: 2.2rem;
   border-radius: 3px;
@@ -333,6 +380,7 @@ p {
 }
 
 .toolbox-inner-row {
+  animation: fadeIn ease 10s;
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
   justify-content: space-between;
@@ -480,6 +528,7 @@ p {
 }
 
 .color-pallet{
+  animation: fadeIn ease 13s;
   transition:0.5s;
   position: fixed;
   bottom: 50%;
