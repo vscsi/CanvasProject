@@ -232,6 +232,18 @@ p {
   margin: 1px 0;
 }
 
+.toolbox-row-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1px 0;
+}
+
+.left-box {
+  display: flex;
+  justify-content: space-around;
+}
+
 .toolbox-row-2 {
   display: flex;
   flex-wrap: wrap;
@@ -304,7 +316,7 @@ p {
   font-size: 12px;
   text-decoration: none;
   color: #6d7587;
-  margin: 0.2rem 0.2rem;
+  margin: 0.2rem 0.4rem;
 }
 
 .btn:hover{
@@ -559,6 +571,72 @@ p {
 }
 #c6a2c70 {
   background-color: #6a2c70;
+}
+
+#df4f4f4 {
+  background-color: #f4f4f4;
+}
+#df0a500 {
+  background-color: #f0a500;
+}
+#dcf7500 {
+  background-color: #cf7500;
+}
+#d1a1c20 {
+  background-color: #1a1c20;
+}
+
+#e28df99 {
+  background-color: #28df99;
+}
+#e99f3bd {
+  background-color: #99f3bd;
+}
+#ed2f6c5 {
+  background-color: #d2f6c5;
+}
+#ef6f7d4 {
+  background-color: #f6f7d4;
+}
+
+#f1d2d50 {
+  background-color: #1d2d50;
+}
+#f133b5c {
+  background-color: #133b5c;
+}
+#f1e5f74 {
+  background-color: #1e5f74;
+}
+#ffcdab7 {
+  background-color: #fcdab7;
+}
+
+#gf1f3de {
+  background-color: #f1f3de;
+}
+#geb8f8f {
+  background-color: #eb8f8f;
+}
+#gec0101 {
+  background-color: #ec0101;
+}
+#gcd0a0a {
+  background-color: #cd0a0a;
+}
+
+
+#hf09ae9 {
+  background-color: #f09ae9;
+}
+#hffc1fa {
+  background-color: #ffc1fa;
+}
+#hffe78f {
+  background-color: #ffe78f;
+}
+#hffd36b {
+  background-color: #ffd36b;
 }
 
 /* =================== SHAPE SELECTOR =================== */
