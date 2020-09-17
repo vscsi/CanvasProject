@@ -32,12 +32,7 @@ class DrawingLine extends PaintFunction {
   onMouseMove() {}
   onMouseUp(coord) {
     contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-    // this.contextReal.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     drawStraightLine(coord[0], coord[1], this.origX, this.origY, this.contextReal.strokeStyle, this.contextReal.lineWidth, this.contextReal);
-    // this.contextReal.beginPath();
-    // this.contextReal.moveTo(coord[0],coord[1]);
-    // this.contextReal.lineTo(this.origX,this.origY);
-    // this.contextReal.stroke();
   }
   onMouseLeave() {}
   onMouseEnter() {}

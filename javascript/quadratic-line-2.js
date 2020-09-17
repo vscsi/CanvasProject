@@ -1,5 +1,5 @@
 /**********************************************
- * Drawing Quadratic Line (Two control points) Functionality
+ * Drawing Bézier curve (Two control points) Functionality
  * ==================================
  ***********************************************/
 

@@ -3,6 +3,7 @@
  * ==================================
  ***********************************************/
 
+// == Basic Canvas settings == //
 let canvasReal = document.getElementById("canvas-real");
 let contextReal = canvasReal.getContext("2d");
 let canvasDraft = document.getElementById("canvas-draft");
@@ -15,10 +16,7 @@ let currentBgColor = 'white';
 let currentBrushSize = 2;
 let currentDrawColor = "black";
 
-/***** setting background white for canvas *******/ 
-contextReal.fillStyle = 'white';
-contextReal.fillRect(0, 0, canvasReal.width, canvasReal.height);
-
+// == Mouse Events for canvas == //
 $("#canvas-draft").mousedown(function (e) {
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
@@ -29,7 +27,6 @@ $("#canvas-draft").mousedown(function (e) {
 $("#canvas-draft").mousemove(function (e) {
   let mouseX = e.offsetX;
   let mouseY = e.offsetY;
-  // currentFunction.onMouseMove([mouseX, mouseY], e);
   if (dragging) {
     currentFunction.onDragging([mouseX, mouseY], e);
   }
@@ -41,19 +38,6 @@ $("#canvas-draft").mouseup(function (e) {
   let mouseY = e.offsetY;
   currentFunction.onMouseUp([mouseX, mouseY], e);
 });
-
-// $("#canvas-draft").mouseleave(function (e) {
-//   dragging = false;
-//   let mouseX = e.offsetX;
-//   let mouseY = e.offsetY;
-//   currentFunction.onMouseLeave([mouseX, mouseY], e);
-// });
-
-// $("#canvas-draft").mouseenter(function (e) {
-//   let mouseX = e.offsetX;
-//   let mouseY = e.offsetY;
-//   currentFunction.onMouseEnter([mouseX, mouseY], e);
-// });
 
 /** # Class (all classes will have these methods) #
 /*  ====================== */
@@ -67,25 +51,11 @@ class PaintFunction {
   onMouseEnter() {}
 }
 
-
-// // Size picker
-// $(".size-picker").click(function () {
-//   let brushSizeID = $(this).css("order");
-//   if (brushSizeID == 1) {
-//     currentBrushSize = 2;
-//   } else if (brushSizeID == 2) {
-//     currentBrushSize = 5;
-//   } else if (brushSizeID == 3) {
-//     currentBrushSize = 10;
-//   };
-// });
-
-//cursor tracker with coordinates     *need to add canvas element detector to hide coords outside of canvas
-$(document).bind('mousemove', function(e){
+// == Cursor Tracker with Coordinates == //
+$(document).bind('mousemove', function (e) {
   $('#mouse-coords').css({
-     left:  e.offsetX + 18,
-     top:   e.offsetY + 18
+    left: e.offsetX + 18,
+    top: e.offsetY + 18
   });
   $('#mouse-coords').text(`x:${e.offsetX} y:${e.offsetY}`);
 });
-

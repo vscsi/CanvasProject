@@ -1,4 +1,4 @@
-let clickcount = 0;
+// ==== Randomize Color loop ==== //
 
 const discoColor = () => {
 
@@ -14,7 +14,7 @@ const discoColor = () => {
         currentBgColor = `rgb(${r}, ${b}, ${g})`
         load(contextReal);
         discoColor();
-    }, 1000);
+    }, 2000);
 
 }
 

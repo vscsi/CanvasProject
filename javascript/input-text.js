@@ -1,3 +1,7 @@
+/**********************************************
+ * Text Input Functionality
+ * =================================
+ ***********************************************/
 let containInput = false;
 
 class DrawText extends PaintFunction {

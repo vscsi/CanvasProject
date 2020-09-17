@@ -1,4 +1,4 @@
- // Save canvas image as data url 
+ // == Save canvas image as data url == //
  var canvas = document.getElementById("canvas-real");
 
  var saveButton = document.getElementById('save');

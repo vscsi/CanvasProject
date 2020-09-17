@@ -2,7 +2,6 @@
  * Drawing Square Functionality
  * ==================================
  ***********************************************/
-// https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
 class DrawingSquare extends PaintFunction {
     constructor(contextReal, contextDraft) {
       super();
@@ -32,12 +31,6 @@ class DrawingSquare extends PaintFunction {
       onMouseUp(coord) {
         this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
         drawStrokeSquare(this.origX, this.origY, coord[1] - this.origY, "stroke", this.contextReal.strokeStyle, this.contextReal.lineWidth, "#", this.contextReal)
-        // this.contextReal.strokeRect(
-        //   this.origX,
-        //   this.origY,
-        //   coord[1] - this.origY,
-        //   coord[1] - this.origY
-        // );
       }
     onMouseLeave() {}
     onMouseEnter() {}
