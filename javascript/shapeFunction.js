@@ -83,4 +83,19 @@ const drawQuadline2End = (x, y, context) => {
     // append (x4, y4)
     currentInstance[currentInstanceIndex].append(x, y);
     refresh(context)
-}
+};
+
+const drawTextboxInit = (x, y, lineWidth) => {
+    currentInstance[currentInstanceIndex] = new Textbox({x: x, y: y, lineWidth: lineWidth});
+};
+
+const drawTextboxEnd = (text, context) => {
+    currentInstance[currentInstanceIndex].text = text;
+    currentInstance[currentInstanceIndex].context = context;
+    refresh(context);
+};
+
+const drawPolygonInit = (x, y, strokeStyle, lineWidth, context) => {
+    currentInstance[currentInstanceIndex] = new Polygon({strokeStyle : strokeStyle, lineWidth : lineWidth, context: context});
+    currentInstance[currentInstanceIndex].append(x, y)
+};
