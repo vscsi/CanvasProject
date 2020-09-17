@@ -68,29 +68,17 @@ class PaintFunction {
 }
 
 
-// Color picker
-$(".sp-val").click(function () {
-  t = $("#color-picker").spectrum("get");
-  currentDrawColor = t.toRgbString()
-  console.log(currentDrawColor)
-});
-$(".sp-hue").click(function () {
-  t = $("#color-picker").spectrum("get");
-  currentDrawColor = t.toRgbString()
-  console.log(currentDrawColor)
-});
-
-// Size picker
-$(".size-picker").click(function () {
-  let brushSizeID = $(this).css("order");
-  if (brushSizeID == 1) {
-    currentBrushSize = 2;
-  } else if (brushSizeID == 2) {
-    currentBrushSize = 5;
-  } else if (brushSizeID == 3) {
-    currentBrushSize = 10;
-  };
-});
+// // Size picker
+// $(".size-picker").click(function () {
+//   let brushSizeID = $(this).css("order");
+//   if (brushSizeID == 1) {
+//     currentBrushSize = 2;
+//   } else if (brushSizeID == 2) {
+//     currentBrushSize = 5;
+//   } else if (brushSizeID == 3) {
+//     currentBrushSize = 10;
+//   };
+// });
 
 //cursor tracker with coordinates     *need to add canvas element detector to hide coords outside of canvas
 $(document).bind('mousemove', function(e){
