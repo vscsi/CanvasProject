@@ -54,8 +54,8 @@ class PaintFunction {
 // == Cursor Tracker with Coordinates == //
 $(document).bind('mousemove', function (e) {
   $('#mouse-coords').css({
-    left: e.offsetX + 18,
-    top: e.offsetY + 18
+    left: e.offsetX + 20,
+    top: e.offsetY + 32
   });
   $('#mouse-coords').text(`x:${e.offsetX} y:${e.offsetY}`);
 });
