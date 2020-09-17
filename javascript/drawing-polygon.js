@@ -24,11 +24,9 @@ class DrawingPolygon extends PaintFunction {
   onMouseDown(coord, event) {
     clickCount += 1
     dragging = false;
-    // console.log(clickCount)
 
     // run on first click
     if (clickCount == 1) {
-      // console.log(clickCount);
       contextDraft.strokeStyle = currentDrawColor;
       contextDraft.lineWidth = currentBrushSize;
       contextReal.strokeStyle = currentDrawColor;
@@ -37,7 +35,6 @@ class DrawingPolygon extends PaintFunction {
       this.origY = coord[1];
       lastX = coord[0];
       lastY = coord[1];
-      // console.log("down 1")
 
       // script for stack:
       drawPolygonInit(coord[0], coord[1], currentDrawColor, currentBrushSize, contextReal);
@@ -72,12 +69,9 @@ class DrawingPolygon extends PaintFunction {
     }
   }
 
-  // onMouseMove() {}
+  onMouseMove() {}
   onMouseUp(coord) {
-      
-    // console.log("up")
     dragging = true;
-    
   }
 
   onDragging(coord, event) {
@@ -90,9 +84,6 @@ class DrawingPolygon extends PaintFunction {
       contextDraft.moveTo(coord[0],coord[1]);
       contextDraft.lineTo(lastX, lastY);
       contextDraft.stroke();
-
-      // console.log(lastX);
-      // console.log(lastY);
     } else {
       dragging = false;
     }
@@ -100,5 +91,5 @@ class DrawingPolygon extends PaintFunction {
   }
 
   onMouseLeave() {contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);}
-  // onMouseEnter() {}
+  onMouseEnter() {}
 }

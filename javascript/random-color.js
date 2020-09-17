@@ -1,3 +1,8 @@
+/**********************************************
+ * Randomizing Color Functionality
+ * ==================================
+ ***********************************************/
+// == Basic Randomizing == //
 const randomColor = () => {
     for (var i = 0; i < currentInstanceIndex; i++) {
         var r = Math.round(Math.random() * 255);
@@ -11,6 +16,7 @@ const randomColor = () => {
     load(contextReal);
 }
 
+// == Depending on which palette chosen (or not chosen), and radomize according to palette ==//
 $('#random-color').click(() => {
     if(clickOnPalette1){
         randomPalette1();

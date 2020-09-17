@@ -70,7 +70,7 @@ class QuadraticLine1 extends PaintFunction {
       console.log(currentDrawColor)
     }
   }
-  // onMouseMove() {}
+  onMouseMove() {}
   onMouseUp(coord) {
     if (clickTracker == 0) {
       q1b = coord[0]; // append x2

@@ -1,7 +1,6 @@
 // ==== Brush and Text color picker ==== //
 $('#color-picker').spectrum({
-  type: "color",
-  showAlpha: "false"
+  type: "color"
 });
 
 $(".sp-val").click(function () {

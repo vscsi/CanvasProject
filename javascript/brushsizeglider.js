@@ -1,7 +1,7 @@
-// brush size displaying on html
+// ==== Displaying Brush Size on HTML ==== //
 $('#brushSize').html(currentBrushSize);
 
-// Brush size
+// ==== Check brush size when moving glider ==== //
 function checkBrushSize() {
     currentBrushSize = $('#brushSizeGlider').val();
     $('#brushSize').html(currentBrushSize);
