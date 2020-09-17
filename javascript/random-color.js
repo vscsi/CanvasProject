@@ -13,11 +13,9 @@ const randomColor = () => {
 
 $('#random-color').click(() => {
     if(clickOnPalette1){
-        console.log(`cp1 is true`)
         randomPalette1();
     }
     else if(clickOnPalette2){
-        console.log(`cp2 is true`)
         randomPalette2();
     }
     else if(clickOnPalette3){
