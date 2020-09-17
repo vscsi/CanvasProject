@@ -77,10 +77,21 @@
           <span class="btn" id="fillrect"><img src="./assets/icons/rectangle-filled.png"></span>
           <span class="btn" id="fillsquare"><img src="./assets/icons/square-filled.png"></span>
           <span class="btn" id="fillcircle"><img src="./assets/icons/circle-filled.png"></span>
+          <span class="btn-toolbox" id="spray">spray</span>
+    </div>
+
         </div>
 
         <div class="toolbox-row">
+           <p>Brush and Text size : <span id="brushSize"></span></p>
+      <input class="pointer" type="range" id="brushSizeGlider" min="2" max="30" value="2">
+                <p>bg color</p>
+      <input id="bgcolor-picker" value='#fff' />
+      <!-- Color picker -->
+      <p>brush text color</p>
+      <input id="color-picker" value='#000' />
           <!-- Color picker -->
+          
           <input id="color-picker" value='#000' />
         </div>
 
@@ -177,6 +188,10 @@
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
 
+  <!-- hammer.js -->
+  <script src="./javascript/vendor/hammer.js" type="text/javascript" async defer></script>
+  <script src="./javascript/touch-control.js" type="text/javascript" async defer></script>
+
   <!--Stack & Instance-->
   <script src="./javascript/stack.js" type="text/javascript" async defer></script>
 
@@ -191,6 +206,9 @@
   <!--color picker -->
   <script src="javascript/vendor/spectrum.js" type="text/javascript" async defer></script>
   <script src="javascript/color-picker.js" type="text/javascript" async defer></script>
+
+  <!--bg color picker-->
+  <script src="javascript/background-color.js" type="text/javascript" async defer></script>
 
   <!-- SHAPES -->
   <!-- The drawing functionality  -->
@@ -269,6 +287,9 @@
   <!-- brush size glider-->
   <script src="./javascript/brushsizeglider.js" type="text/javascript" async defer></script>
 
+  <!-- The Srpay brush functionality  -->
+  <script src="javascript/spray-brush.js" type="text/javascript" async defer></script>
+
 
   <!-- CONNECT BUTTONS AND SCRIPTS-->
   <script type="text/javascript">
@@ -316,6 +337,10 @@
       $("#fillcircle").click(() => {
         currentFunction = new FillCircle(contextReal, contextDraft);
       })
+
+      $("#spray").click(() => {
+        currentFunction = new SprayBrush(contextReal, contextDraft);
+
       $("#tool-fill").click(() => {
         currentFunction = new ToolFill(contextReal);
       })

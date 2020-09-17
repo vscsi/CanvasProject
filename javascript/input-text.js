@@ -24,7 +24,7 @@ function commitText(event) {
         if (containInput == false) {
             const input = document.createElement('input');
             input.type = 'text';
-            input.placeholder = 'Enter your text here';
+            input.placeholder = 'Press Enter when finish, Esc to cancel';
             input.style.background = 'transparent';
             input.style.position = 'fixed';
             input.style.top = `${y}px`;
