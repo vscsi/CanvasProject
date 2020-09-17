@@ -225,6 +225,7 @@ class Textbox {
 class Polygon extends Brush {
     constructor(options){
         super(options);
+        this.name = "polygon";
     };
     commit = () => {
         this.context.strokeStyle = this.strokeStyle;
