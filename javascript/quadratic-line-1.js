@@ -67,7 +67,6 @@ class QuadraticLine1 extends PaintFunction {
       //change back style to user selected style
       this.contextDraft.strokeStyle = currentDrawColor;
       this.contextDraft.lineWidth = currentBrushSize;
-      console.log(currentDrawColor)
     }
   }
   onMouseMove() {}
@@ -92,7 +91,6 @@ class QuadraticLine1 extends PaintFunction {
 
     // click tracking & reset
     clickTracker += 1
-    console.log(clickTracker)
     if (clickTracker > 1) {
       clickTracker = 0
     } else {}

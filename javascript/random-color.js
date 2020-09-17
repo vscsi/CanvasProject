@@ -10,7 +10,6 @@ const randomColor = () => {
         var g = Math.round(Math.random() * 255);
         currentInstance[i].fillStyle = `rgb(${r}, ${b}, ${g})`
         currentInstance[i].strokeStyle = `rgb(${r}, ${b}, ${g})`
-        console.log(`rgb(${r}, ${g}, ${b})`)
     };
     currentBgColor = `rgb(${r}, ${b}, ${g})`
     load(contextReal);

@@ -76,7 +76,6 @@ const drawQuadline2Drag = (x, y) => {
 
 const drawQuadline2Drag2nd = (x, y) => {
     // change (x3, y3)
-    // maybe not needed
 };
 
 const drawQuadline2End = (x, y, context) => {

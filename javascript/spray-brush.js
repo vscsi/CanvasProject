@@ -35,18 +35,15 @@ class SprayBrush extends PaintFunction {
 
             if (!timeout) return;
             timeout = setTimeout(draw, 50);
-            console.log(timeout)
         }, 50);
 
         // script for stack
-        // drawBrushInit(coord[0], coord[1], this.context.fillStyle, this.context.lineWidth, this.context);
     }
     onDragging(coord, event) {
         x = coord[0];
         y = coord[1];
 
         // script for stack
-        // drawBrushDrag(coord[0], coord[1], this.context);
 
     }
 
@@ -55,7 +52,6 @@ class SprayBrush extends PaintFunction {
         clearTimeout(timeout);
         return
         // script for stack
-        // refresh(this.context)
     };
     onMouseLeave() {}
     onMouseEnter() {}

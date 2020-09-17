@@ -171,7 +171,6 @@ p {
 }
 
 .shapes {
-  animation: fadeIn ease 11s;
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
   justify-content: space-between;
@@ -188,6 +187,7 @@ p {
 #shapeList {
   list-style: none;
   padding-left:0;
+  animation: fadeIn ease 11s;
 }
 
 .action-btn-container {

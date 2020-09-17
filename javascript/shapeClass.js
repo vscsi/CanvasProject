@@ -217,7 +217,6 @@ class Textbox {
         this.text = value
     };
     commit = () => {
-        console.log(this.text);
         this.context.textBaseline = 'top';
         this.context.textAlign = 'left';
         this.context.font = this.font;
