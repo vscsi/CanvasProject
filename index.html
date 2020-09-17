@@ -15,12 +15,10 @@
       crossorigin="anonymous"/>
     <link rel="stylesheet" href="css/style.css" />
     <link rel='stylesheet' href="css/spectrum.css">
-
-   
   </head>
 
-  <body> 
 
+  <body> 
     <div id="side-menu" class="side-menu" onmouseleave="closeMenu()">
       <div class="color-pallet-row">
         <span class="pallet" id="a252A4A">#252A4A</span> 
@@ -45,13 +43,12 @@
 
     <div class="container main" id="main">
      <div class="toolbox-container-left">
-       
       <div class="draw-tools-container">
         <div class="toolbox-row">
           <div class="toolbox-titles"><p>Drawing Tools</p></div>
         </div>
         <div class="toolbox-row">
-          <!-- The drawing brush button  -->
+        <!-- The drawing brush button  -->
         <span class="btn tool-row-2" id="tool-brush"><img src="./assets/icons/brush.png"></span> 
         <!-- The tool eraser button  -->
         <span class="btn tool-row-2" id="tool-eraser"><img src="./assets/icons/eraser.png"></span> 
@@ -78,13 +75,12 @@
           <span class="btn" id="fillsquare"><img src="./assets/icons/square-filled.png"></span>
           <span class="btn" id="fillcircle"><img src="./assets/icons/circle-filled.png"></span>
           <!-- <span class="btn-toolbox" id="spray">spray</span> -->
-    </div>
-
         </div>
+      </div>
 
         <div class="toolbox-row">
-           <p>Brush and Text size : <span id="brushSize"></span></p>
-          <input class="pointer" type="range" id="brushSizeGlider" min="2" max="30" value="2">
+           <!-- <p>Brush and Text size : <span id="brushSize"></span></p>
+          <input class="pointer" type="range" id="brushSizeGlider" min="2" max="30" value="2"> -->
           <!-- Background color picker -->
           <!-- <p>bg color</p>
           <input id="bgcolor-picker" value='#fff' /> -->
@@ -99,7 +95,7 @@
           <span class="btn" id="undo" onclick="undo(contextReal)"><img src="./assets/icons/undo.png"></span>
           <span class="btn" id="redo" onclick="redo(contextReal)"><img src="./assets/icons/redo.png"></span>
         </div>
-      </div>
+    <!-- </div> -->
        
       <!-- <div class="brush-size-tool-container"> -->
         <!-- Brush size picker  -->
@@ -108,37 +104,39 @@
         <div class="size-picker btn-toolbox" id="size-3">3</div> -->
       <!-- </div> -->
 
-     </div>
+    </div>
 
 
-     <div class="action-log-container">
-        <div id="action-log-header">
+    <div class="action-log-container">
+      <div id="action-log-header">
           <p>Action Log</p>
-        </div>
-        <div class="action-log">
-          <div id="shapeSelector">
-            <ul id="shapeList"></ul>
+      </div>
+      <div class="action-log">
+        <div id="shapeSelector">
+          <ul id="shapeList"></ul>
           </div>
-          <p>#12 Drew Linear Line | [btn] [btn] [btn]</p>
-          <p>#11 Drew Square | [btn] [btn] [btn]</p>
-          <p>#10 Drew Circle | [btn] [btn] [btn]</p>
-          <p>#9 Drew Linear Line | [btn] [btn] [btn]</p>
-          <p>#8 Drew Square | [btn] [btn] [btn]</p>
-          <p>#7 Drew Circle | [btn] [btn] [btn]</p>
-          <p>#6 Drew Linear Line | [btn] [btn] [btn]</p>
-          <p>#5 Drew Square | [btn] [btn] [btn]</p>
-          <p>#4 Drew Circle | [btn] [btn] [btn]</p>
-          <p>#3 Drew Linear Line | [btn] [btn] [btn]</p>
-          <p>#2 Drew Square | [btn] [btn] [btn]</p>
-          <p>#1 Drew Circle | [btn] [btn] [btn]</p>
+            <p>#12 Drew Linear Line | [btn] [btn] [btn]</p>
+            <p>#11 Drew Square | [btn] [btn] [btn]</p>
+            <p>#10 Drew Circle | [btn] [btn] [btn]</p>
+            <p>#9 Drew Linear Line | [btn] [btn] [btn]</p>
+            <p>#8 Drew Square | [btn] [btn] [btn]</p>
+            <p>#7 Drew Circle | [btn] [btn] [btn]</p>
+            <p>#6 Drew Linear Line | [btn] [btn] [btn]</p>
+            <p>#5 Drew Square | [btn] [btn] [btn]</p>
+            <p>#4 Drew Circle | [btn] [btn] [btn]</p>
+            <p>#3 Drew Linear Line | [btn] [btn] [btn]</p>
+            <p>#2 Drew Square | [btn] [btn] [btn]</p>
+            <p>#1 Drew Circle | [btn] [btn] [btn]</p>
+          </div>
         </div>
-     </div>
+      </div>
+    </div>
 
 
 
 
 
-
+    <!-- =======================  CANVAS =======================  -->
 
     <h1 id="canvas-header">Online Canvas</h1>
     <div id="canvas-container">
@@ -152,13 +150,14 @@
   </div>
 
 
+
     <!--color picker -->
-    <script src="javascript/vendor/spectrum.js" type="text/javascript" async defer></script>
-    <script src="javascript/color-picker.js" type="text/javascript" async defer></script>
+    <!-- <script src="javascript/vendor/spectrum.js" type="text/javascript" async defer></script>
+    <script src="javascript/color-picker.js" type="text/javascript" async defer></script> -->
     
     <!-- SHAPES -->
     <!-- The drawing functionality  -->
-    <script src="javascript/canvas-common.js" type="text/javascript" async defer></script>
+    <!-- <script src="javascript/canvas-common.js" type="text/javascript" async defer></script> -->
 
 
 
@@ -186,7 +185,7 @@
   <script src="javascript/color-picker.js" type="text/javascript" async defer></script>
 
   <!--bg color picker-->
-  <script src="javascript/background-color.js" type="text/javascript" async defer></script>
+  <!-- <script src="javascript/background-color.js" type="text/javascript" async defer></script> -->
 
   <!-- SHAPES -->
   <!-- The drawing functionality  -->
@@ -226,18 +225,18 @@
     <script src="./javascript/tool-fill.js" type="text/javascript" async defer></script>
 
   <!-- The fill rectangle functionality-->
-  <script src="./javascript/fill-rectangle.js" type="text/javascript" async defer></script>
+  <!-- <script src="./javascript/fill-rectangle.js" type="text/javascript" async defer></script> -->
   <!-- The fill square functionality-->
-  <script src="./javascript/fill-square.js" type="text/javascript" async defer></script>
+  <!-- <script src="./javascript/fill-square.js" type="text/javascript" async defer></script> -->
   <!-- The fill circle functionality-->
-  <script src="./javascript/fill-circle.js" type="text/javascript" async defer></script>
+  <!-- <script src="./javascript/fill-circle.js" type="text/javascript" async defer></script> -->
 
   <!-- Save image functionality -->
   <script src="javascript/save-image.js" type="text/javascript"></script>
 
 
   <!-- Tool Text functionality -->
-  <script src="javascript/input-text.js" type="text/javascript" async defer></script>
+  <!-- <script src="javascript/input-text.js" type="text/javascript" async defer></script> -->
 
 
     <!-- Tool Text functionality -->
@@ -269,64 +268,64 @@
   <!-- <script src="javascript/spray-brush.js" type="text/javascript" async defer></script> -->
 
 
-  <!-- CONNECT BUTTONS AND SCRIPTS-->
-  <script type="text/javascript">
-    $(() => {
-      currentFunction = new DrawingLine(contextReal) //initiate desult tool
+    <!-- CONNECT BUTTONS AND SCRIPTS-->
+    <script type="text/javascript">
+      $(() => {
+        currentFunction = new DrawingLine(contextReal) //initiate desult tool
 
-      $("#drawing-rectangle").click(() => {
-        currentFunction = new DrawingRectangle(contextReal, contextDraft);
-      });
-      $("#tool-brush").click(() => {
-        currentFunction = new ToolBrush(contextReal);
-      });
-      $("#drawing-line").click(() => {
-        currentFunction = new DrawingLine(contextReal);
-      });
-      $("#quadratic-line-1").click(() => {
-        currentFunction = new QuadraticLine1(contextReal, contextDraft);
-      });
-      $("#quadratic-line-2").click(() => {
-        currentFunction = new QuadraticLine2(contextReal, contextDraft);
-      });
-      $("#drawing-square").click(() => {
-        currentFunction = new DrawingSquare(contextReal, contextDraft);
-      });
-      $("#drawing-circle").click(() => {
-        currentFunction = new DrawingCircle(contextReal, contextDraft);
-      });
+        $("#drawing-rectangle").click(() => {
+          currentFunction = new DrawingRectangle(contextReal, contextDraft);
+        });
+        $("#tool-brush").click(() => {
+          currentFunction = new ToolBrush(contextReal);
+        });
+        $("#drawing-line").click(() => {
+          currentFunction = new DrawingLine(contextReal);
+        });
+        $("#quadratic-line-1").click(() => {
+          currentFunction = new QuadraticLine1(contextReal, contextDraft);
+        });
+        $("#quadratic-line-2").click(() => {
+          currentFunction = new QuadraticLine2(contextReal, contextDraft);
+        });
+        $("#drawing-square").click(() => {
+          currentFunction = new DrawingSquare(contextReal, contextDraft);
+        });
+        $("#drawing-circle").click(() => {
+          currentFunction = new DrawingCircle(contextReal, contextDraft);
+        });
 
-      $("#tool-eraser").click(() => {
-        currentFunction = new ToolEraser(contextReal);
-      });
-      $("#drawing-polygon").click(() => {
-        currentFunction = new DrawingPolygon(contextReal, contextDraft);
-      });
-      $("#input-text").click(() => {
-        containInput = false;
-        currentFunction = new DrawText(contextReal);
-      })
-      $("#fillrect").click(() => {
-        currentFunction = new FillRectangle(contextReal, contextDraft);
-      })
-      $("#fillsquare").click(() => {
-        currentFunction = new FillSquare(contextReal, contextDraft);
-      })
-      $("#fillcircle").click(() => {
-        currentFunction = new FillCircle(contextReal, contextDraft);
-      })
+        $("#tool-eraser").click(() => {
+          currentFunction = new ToolEraser(contextReal);
+        });
+        $("#drawing-polygon").click(() => {
+          currentFunction = new DrawingPolygon(contextReal, contextDraft);
+        });
+        $("#input-text").click(() => {
+          containInput = false;
+          currentFunction = new DrawText(contextReal);
+        })
+        $("#fillrect").click(() => {
+          currentFunction = new FillRectangle(contextReal, contextDraft);
+        })
+        $("#fillsquare").click(() => {
+          currentFunction = new FillSquare(contextReal, contextDraft);
+        })
+        $("#fillcircle").click(() => {
+          currentFunction = new FillCircle(contextReal, contextDraft);
+        })
 
-      $("#spray").click(() => {
-        currentFunction = new SprayBrush(contextReal, contextDraft);
+        $("#spray").click(() => {
+          currentFunction = new SprayBrush(contextReal, contextDraft);
+        })
+        $("#tool-fill").click(() => {
+          currentFunction = new ToolFill(contextReal);
+        })
 
-      $("#tool-fill").click(() => {
-        currentFunction = new ToolFill(contextReal);
       })
-
-    })
     
-  </script>
+    </script>
 
-</body>
+  </body>
 
 </html>
