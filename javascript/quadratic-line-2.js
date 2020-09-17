@@ -27,9 +27,14 @@ class QuadraticLine2 extends PaintFunction {
     if (clickTracker2 == 0) {
       q2a = coord[0];
       q2aa = coord[1];
+      // script for stack
+      drawQuadline2Init(coord[0], coord[1], this.contextDraft.strokeStyle, this.contextDraft.lineWidth, this.contextReal); // 1st pt
+
     } else if (clickTracker2 == 1) {
       q2c = coord[0];
       q2cc = coord[1];
+
+
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       this.contextDraft.beginPath();
       this.contextDraft.moveTo(q2a, q2aa);
@@ -80,6 +85,7 @@ class QuadraticLine2 extends PaintFunction {
       contextDraft.moveTo(q2a, q2aa);
       contextDraft.bezierCurveTo(q2c, q2cc, coord[0], coord[1], q2b, q2bb);
       contextDraft.stroke();
+
       //change style of indicators
       this.contextDraft.strokeStyle = "#DCDCDC";
       this.contextDraft.lineWidth = 1;
@@ -105,13 +111,22 @@ class QuadraticLine2 extends PaintFunction {
     if (clickTracker2 == 0) {
       q2b = coord[0];
       q2bb = coord[1];
+      // script for stack
+      drawQuadline2Drag(coord[0], coord[1]); // 2nd pt
+
     } else if (clickTracker2 == 1) {
+      // script for stack
+      drawQuadline2Drag(coord[0], coord[1]); // 3rd pt
+
     } else {
       contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       contextReal.beginPath();
-      contextReal.moveTo(q2a, q2aa);
-      contextReal.bezierCurveTo(q2c, q2cc, coord[0], coord[1], q2b, q2bb);
+      contextReal.moveTo(q2a, q2aa); // (x1, x2)
+      contextReal.bezierCurveTo(q2c, q2cc, coord[0], coord[1], q2b, q2bb); 
       contextReal.stroke();
+
+      // script for stack
+      drawQuadline2End(coord[0], coord[1], this.contextReal); // 4th pt
     }
     clickTracker2 += 1
     console.log(clickTracker2)

@@ -476,3 +476,13 @@ p {
 #c6a2c70 {
   background-color: #6a2c70;
 }
+
+/* =================== SHAPE SELECTOR =================== */
+
+#shapeSelector {
+  width:500px;
+  height: 1000px;
+  background-color: white;
+  float: right
+}
+

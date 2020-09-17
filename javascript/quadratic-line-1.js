@@ -22,8 +22,12 @@ class QuadraticLine1 extends PaintFunction {
     this.contextDraft.strokeStyle = currentDrawColor;
     this.contextDraft.lineWidth = currentBrushSize;
     if (clickTracker == 0) {
-      q1a = coord[0];
-      q1aa = coord[1];
+      q1a = coord[0]; // append x1
+      q1aa = coord[1]; // append y1
+
+      // script for stack
+      drawQuadline1Init(coord[0], coord[1], this.contextDraft.strokeStyle, this.contextDraft.lineWidth, this.contextReal);
+
     } else {
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       this.contextDraft.beginPath();
@@ -40,7 +44,7 @@ class QuadraticLine1 extends PaintFunction {
       contextDraft.beginPath();
       contextDraft.strokeStyle = currentDrawColor;
       contextDraft.lineWidth = currentBrushSize;
-      contextDraft.moveTo(coord[0],coord[1]);
+      contextDraft.moveTo(coord[0],coord[1]); 
       contextDraft.lineTo(q1a,q1aa);
       contextDraft.stroke();
     } else {
@@ -69,14 +73,21 @@ class QuadraticLine1 extends PaintFunction {
   // onMouseMove() {}
   onMouseUp(coord) {
     if (clickTracker == 0) {
-      q1b = coord[0];
-      q1bb = coord[1];
+      q1b = coord[0]; // append x2
+      q1bb = coord[1]; // append y2
+
+      // script for stack
+      drawQuadline1Drag(coord[0], coord[1]);
+
     } else {
       contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       contextReal.beginPath();
-      contextReal.moveTo(q1a, q1aa);
-      contextReal.quadraticCurveTo(coord[0], coord[1], q1b, q1bb);
+      contextReal.moveTo(q1a, q1aa); // x1, y1 (startx, startY)
+      contextReal.quadraticCurveTo(coord[0], coord[1], q1b, q1bb); // (curveX, curveY, endX, endY)
       contextReal.stroke();
+
+      // script for stack
+      drawQuadline1End(coord[0], coord[1], this.contextReal);
     }
 
     // click tracking & reset

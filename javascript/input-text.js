@@ -18,7 +18,7 @@ class DrawText extends PaintFunction {
 }
 
 function commitText(event) {
-    const font = '26px san-serif';
+    const font = `${currentBrushSize}px san-serif`;
 
     function addInput(x, y) {
         if (containInput == false) {
@@ -29,7 +29,7 @@ function commitText(event) {
             input.style.position = 'fixed';
             input.style.top = `${y}px`;
             input.style.left = `${x}px`;
-            input.style.width = `${300}px`;
+            input.style.width = `${280}px`;
             input.style.zIndex = 999999;
             input.onkeydown = handleEnter;
             document.body.appendChild(input);

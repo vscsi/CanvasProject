@@ -19,7 +19,7 @@ class ToolEraser extends PaintFunction {
       this.draw(coord[0], coord[1]);
 
        // script for stack
-       drawBrushInit(coord[0], coord[1], this.context.strokeStyle, this.context.lineWidth, this.context);
+       drawErasorInit(coord[0], coord[1], this.context.strokeStyle, this.context.lineWidth, this.context);
     }
     onDragging(coord, event) {
       this.draw(coord[0], coord[1]);
