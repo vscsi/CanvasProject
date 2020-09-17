@@ -24,11 +24,11 @@ class DrawingPolygon extends PaintFunction {
   onMouseDown(coord, event) {
     clickCount += 1
     dragging = false;
-    console.log(clickCount)
+    // console.log(clickCount)
 
     // run on first click
     if (clickCount == 1) {
-      console.log(clickCount);
+      // console.log(clickCount);
       contextDraft.strokeStyle = currentDrawColor;
       contextDraft.lineWidth = currentBrushSize;
       contextReal.strokeStyle = currentDrawColor;
@@ -37,7 +37,11 @@ class DrawingPolygon extends PaintFunction {
       this.origY = coord[1];
       lastX = coord[0];
       lastY = coord[1];
-      console.log("down 1")
+      // console.log("down 1")
+
+      // script for stack:
+      drawPolygonInit(coord[0], coord[1], currentDrawColor, currentBrushSize, contextReal);
+
     } else {
       // check if click is last stroke
       if (between(coord[0],this.origX -21, this.origX + 21) == true && between(coord[1],this.origY -21, this.origY + 21) == true) {
@@ -47,6 +51,11 @@ class DrawingPolygon extends PaintFunction {
         contextReal.lineTo(this.origX, this.origY);
         contextReal.stroke();
         clickCount = 0;   //reset counter so drag won't run
+
+        // script for stack:
+        drawBrushDrag(this.origX, this.origY);
+        refresh(contextReal)
+
       } else {
         contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
         contextReal.beginPath();
@@ -55,6 +64,10 @@ class DrawingPolygon extends PaintFunction {
         contextReal.stroke();
         lastX = coord[0];
         lastY = coord[1];
+
+        // script for stack:
+        drawBrushDrag(coord[0], coord[1]);
+
       }
     }
   }
@@ -62,7 +75,7 @@ class DrawingPolygon extends PaintFunction {
   // onMouseMove() {}
   onMouseUp(coord) {
       
-    console.log("up")
+    // console.log("up")
     dragging = true;
     
   }
@@ -78,8 +91,8 @@ class DrawingPolygon extends PaintFunction {
       contextDraft.lineTo(lastX, lastY);
       contextDraft.stroke();
 
-      console.log(lastX);
-      console.log(lastY);
+      // console.log(lastX);
+      // console.log(lastY);
     } else {
       dragging = false;
     }

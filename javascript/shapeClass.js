@@ -201,4 +201,51 @@ class Quadline2 extends Quadline1{
         this.context.bezierCurveTo(this.x[2], this.y[2], this.x[3], this.y[3], this.x[1], this.y[1]); 
         this.context.stroke();
     }
+};
+
+class Textbox {
+    constructor(options) {
+        this.name = "textbox"
+        this.text = "";
+        this.x = options.x;
+        this.y = options.y;
+        this.font = `${options.lineWidth * 10}px san-serif`;
+        this.lineWidth = options.lineWidth;
+        this.fillStyle = options.fillStyle;
+    };
+    textInput = (value) => {
+        this.text = value
+    };
+    commit = () => {
+        console.log(this.text);
+        this.context.textBaseline = 'top';
+        this.context.textAlign = 'left';
+        this.context.font = this.font;
+        this.context.fillStyle = this.fillStyle;
+        this.context.fillText(this.text, this.x, this.y);
+    }
+};
+
+class Polygon extends Brush {
+    constructor(options){
+        super(options);
+        this.name = "polygon";
+    };
+    commit = () => {
+        this.context.strokeStyle = this.strokeStyle;
+        this.context.lineJoin = "round";
+        this.context.lineWidth = this.lineWidth;
+        this.context.beginPath();
+        this.context.moveTo(this.x[0], this.y[0]);
+        for (var i=1; i < this.x.length; i++) {
+            this.context.lineTo(this.x[i], this.y[i]);
+            this.context.moveTo(this.x[i], this.y[i]);
+            this.context.closePath();
+            this.context.stroke();
+        };
+    };
+    append = (x, y) => {
+        this.x.push(x);
+        this.y.push(y);
+    };
 }

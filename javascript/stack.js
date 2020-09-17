@@ -19,8 +19,7 @@ const load = (context) => {
         stack[0][key].commit()
     };
     // Shape Selector Events
-    loadShapeSelector();
-    changeFillStyle();
+    changeButtons();
 };
 
 // undo is done by shift()ing the stack, then load again
