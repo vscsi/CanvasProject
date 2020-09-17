@@ -45,7 +45,7 @@
      <div class="toolbox-container-left">
       <div class="draw-tools-container">
         <div class="toolbox-row">
-          <div class="toolbox-titles"><p>Drawing Tools</p></div>
+          <div class="toolbox-titles"><p>Toolbox</p></div>
         </div>
         <div class="toolbox-row">
         <!-- The drawing brush button  -->
@@ -79,21 +79,26 @@
       </div>
 
         <div class="toolbox-row">
-           <!-- <p>Brush and Text size : <span id="brushSize"></span></p>
-          <input class="pointer" type="range" id="brushSizeGlider" min="2" max="30" value="2"> -->
+          <div class="toolbox-inner-row">
+           <p>Tool Size: <span id="brushSize"></span></p>
+           <input class="pointer" type="range" id="brushSizeGlider" min="2" max="30" value="2">
+          </div>
+          <div class="toolbox-inner-row">
+            <p>Tool Color:</p>
+            <input id="color-picker" value='#000'/>
+          </div>
           <!-- Background color picker -->
-          <!-- <p>bg color</p>
-          <input id="bgcolor-picker" value='#fff' /> -->
-          <!-- Color picker -->
-          <!-- <p>brush text color</p>
-          <input id="color-picker" value='#000' /> -->
+          <!-- <p>bg color</p> -->
         </div>
 
-        <div class="toolbox-row">
-          <span class="btn " id="tool-clear" onclick="clearFunction()">CLEAR</span> 
+        <div class="toolbox-row-2">
           <span class="btn" id="save"><img src="./assets/icons/save.png"></span>
           <span class="btn" id="undo" onclick="undo(contextReal)"><img src="./assets/icons/undo.png"></span>
           <span class="btn" id="redo" onclick="redo(contextReal)"><img src="./assets/icons/redo.png"></span>
+        </div>
+
+        <div class="toolbox-row-2">
+          <span class="btn " id="tool-clear" onclick="clearFunction()">CLEAR</span> 
         </div>
     <!-- </div> -->
        
@@ -111,22 +116,8 @@
       <div id="action-log-header">
           <p>Action Log</p>
       </div>
-      <div class="action-log">
-        <div id="shapeSelector">
+      <div class="action-log" id="shapeSelector">
           <ul id="shapeList"></ul>
-          </div>
-            <p>#12 Drew Linear Line | [btn] [btn] [btn]</p>
-            <p>#11 Drew Square | [btn] [btn] [btn]</p>
-            <p>#10 Drew Circle | [btn] [btn] [btn]</p>
-            <p>#9 Drew Linear Line | [btn] [btn] [btn]</p>
-            <p>#8 Drew Square | [btn] [btn] [btn]</p>
-            <p>#7 Drew Circle | [btn] [btn] [btn]</p>
-            <p>#6 Drew Linear Line | [btn] [btn] [btn]</p>
-            <p>#5 Drew Square | [btn] [btn] [btn]</p>
-            <p>#4 Drew Circle | [btn] [btn] [btn]</p>
-            <p>#3 Drew Linear Line | [btn] [btn] [btn]</p>
-            <p>#2 Drew Square | [btn] [btn] [btn]</p>
-            <p>#1 Drew Circle | [btn] [btn] [btn]</p>
           </div>
         </div>
       </div>
@@ -138,12 +129,12 @@
 
     <!-- =======================  CANVAS =======================  -->
 
-    <h1 id="canvas-header">Online Canvas</h1>
+    <h1 id="canvas-header"></h1>
     <div id="canvas-container">
       <!-- cursor UI -->
       <div id="mouse-coords">(x:-, y:-)</div>
-      <canvas id="canvas-real" class="canvas" width="1254px" height="734px"></canvas>
-      <canvas id="canvas-draft" class="canvas" width="1254px" height="734px"></canvas>
+      <canvas id="canvas-real" class="canvas" width="1254px" height="786px"></canvas>
+      <canvas id="canvas-draft" class="canvas" width="1254px" height="786px"></canvas>
     </div>
   </div>
 
@@ -154,10 +145,6 @@
     <!--color picker -->
     <!-- <script src="javascript/vendor/spectrum.js" type="text/javascript" async defer></script>
     <script src="javascript/color-picker.js" type="text/javascript" async defer></script> -->
-    
-    <!-- SHAPES -->
-    <!-- The drawing functionality  -->
-    <!-- <script src="javascript/canvas-common.js" type="text/javascript" async defer></script> -->
 
 
 
@@ -252,10 +239,6 @@
 
   <!-- initial background color-->
   <script src="./javascript/initBackground.js" type="text/javascript" async defer></script>
-
-
-    <!-- initial background color-->
-    <script src="./javascript/initBackground.js" type="text/javascript" async defer></script>
 
     <!-- Slideout.js - slide menu-->
     <script src="./javascript/slideout.js" type="text/javascript" ></script>
