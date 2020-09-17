@@ -85,8 +85,8 @@ const drawQuadline2End = (x, y, context) => {
     refresh(context)
 };
 
-const drawTextboxInit = (x, y, lineWidth) => {
-    currentInstance[currentInstanceIndex] = new Textbox({x: x, y: y, lineWidth: lineWidth});
+const drawTextboxInit = (x, y, lineWidth, fillStyle) => {
+    currentInstance[currentInstanceIndex] = new Textbox({x: x, y: y, lineWidth: lineWidth, fillStyle: fillStyle});
 };
 
 const drawTextboxEnd = (text, context) => {

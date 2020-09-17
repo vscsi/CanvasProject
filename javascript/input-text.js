@@ -8,6 +8,10 @@ class DrawText extends PaintFunction {
 
     onMouseDown(coord, event) {
         commitText(event);
+
+        // script for stack
+        drawTextboxInit(coord[0], coord[1], currentBrushSize, currentDrawColor);
+
     }
 
     onDragging() {}
@@ -18,7 +22,7 @@ class DrawText extends PaintFunction {
 }
 
 function commitText(event) {
-    const font = `${currentBrushSize}px san-serif`;
+    const font = `${currentBrushSize * 10}px san-serif`;
 
     function addInput(x, y) {
         if (containInput == false) {
@@ -53,6 +57,10 @@ function commitText(event) {
         contextReal.font = font;
         contextReal.fillStyle = currentDrawColor;
         contextReal.fillText(text, event.offsetX, event.offsetY);
+        
+        // script for stack
+        drawTextboxEnd(text, contextReal);
+
     }
 
     addInput(event.clientX, event.clientY);
