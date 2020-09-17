@@ -8,6 +8,10 @@ class DrawText extends PaintFunction {
 
     onMouseDown(coord, event) {
         commitText(event);
+
+        // script for stack
+        drawTextboxInit(coord[0], coord[1], currentBrushSize, currentDrawColor);
+
     }
 
     onDragging() {}
@@ -53,6 +57,10 @@ function commitText(event) {
         contextReal.font = font;
         contextReal.fillStyle = currentDrawColor;
         contextReal.fillText(text, event.offsetX, event.offsetY);
+        
+        // script for stack
+        drawTextboxEnd(text, contextReal);
+
     }
 
     addInput(event.clientX, event.clientY);

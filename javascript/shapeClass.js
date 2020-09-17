@@ -205,15 +205,19 @@ class Quadline2 extends Quadline1{
 
 class Textbox {
     constructor(options) {
+        this.name = "textbox"
         this.text = "";
         this.x = options.x;
         this.y = options.y;
-        this.font = `${options.lineWidth}px san-serif`;
+        this.font = `${options.lineWidth * 10}px san-serif`;
+        this.lineWidth = options.lineWidth;
+        this.fillStyle = options.fillStyle;
     };
     textInput = (value) => {
         this.text = value
     };
     commit = () => {
+        console.log(this.text);
         this.context.textBaseline = 'top';
         this.context.textAlign = 'left';
         this.context.font = this.font;
