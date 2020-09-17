@@ -175,23 +175,29 @@
 
 
 
+   <!-- =======================  SCRIPTS =======================  -->
+
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js" crossorigin="anonymous"></script>
   <script src="./javascript/vendor/logo-animation.js" type="text/javascript" async defer></script>
-
-  <!-- hammer.js -->
-  <!-- <script src="./javascript/vendor/hammer.js" type="text/javascript" async defer></script>
-  <script src="./javascript/touch-control.js" type="text/javascript" async defer></script> -->
-
+  
+  <!-- The drawing functionality  -->
+  <script src="javascript/canvas-common.js" type="text/javascript" async defer></script>
+  
   <!--Stack & Instance-->
   <script src="./javascript/stack.js" type="text/javascript" async defer></script>
 
+  
+  <!-- Slideout.js - slide menu-->
+  <script src="./javascript/slideout.js" type="text/javascript" ></script>
+  
+  <!-- SHAPES -->
+
   <!-- shape selector color-->
   <script src="./javascript/shapeSelector.js" type="text/javascript" async defer></script>
-
-  <!-- SHAPES -->
+  
   <script src="./javascript/shapeClass.js" type="text/javascript" async defer></script>
 
   <script src="./javascript/shapeFunction.js" type="text/javascript" async defer></script>
@@ -204,11 +210,6 @@
   <script src="javascript/background-color.js" type="text/javascript" async defer></script>
 
   <!-- SHAPES -->
-  <!-- The drawing functionality  -->
-  <script src="javascript/canvas-common.js" type="text/javascript" async defer></script>
-
-  <!-- The tool brush functionality  -->
-  <script src="javascript/tool-brush.js" type="text/javascript" async defer></script>
 
   <!-- The drawing line functionality  -->
   <script src="javascript/drawing-line.js" type="text/javascript" async defer></script>
@@ -227,41 +228,39 @@
 
   <!-- The drawing circle functionality  -->
   <script src="./javascript/drawing-circle.js" type="text/javascript" async defer></script>
+ 
   <!-- The drawing line functionality  -->
   <script src="./javascript/tool-eraser.js" type="text/javascript" async defer></script>
 
-
   <!-- The fill rectangle functionality-->
   <script src="./javascript/fill-rectangle.js" type="text/javascript" async defer></script>
+  
   <!-- The fill square functionality-->
   <script src="./javascript/fill-square.js" type="text/javascript" async defer></script>
+ 
   <!-- The fill circle functionality-->
   <script src="./javascript/fill-circle.js" type="text/javascript" async defer></script>
-  <!-- The fill circle functionality-->
-  <script src="./javascript/tool-fill.js" type="text/javascript" async defer></script>
-
-
-  <!-- Save image functionality -->
-  <script src="javascript/save-image.js" type="text/javascript"></script>
-
-
-  <!-- Tool Text functionality -->
-  <script src="javascript/input-text.js" type="text/javascript" async defer></script>
 
   <!-- The drawing polygon functionality  -->
   <script src="./javascript/drawing-polygon.js" type="text/javascript" async defer></script>
 
 
   <!-- TOOLS -->
+  
+  <!-- The tool brush functionality  -->
+  <script src="javascript/tool-brush.js" type="text/javascript" async defer></script>
+
+  <!-- Save image functionality -->
+  <script src="javascript/save-image.js" type="text/javascript"></script>
+
+  <!-- Tool Text functionality -->
+  <script src="javascript/input-text.js" type="text/javascript" async defer></script>
+
   <!-- The clear functionality  -->
   <script src="./javascript/tool-clear.js" type="text/javascript" async defer></script>
 
   <!-- initial background color-->
   <script src="./javascript/initBackground.js" type="text/javascript" async defer></script>
-
-  <!-- Slideout.js - slide menu-->
-  <script src="./javascript/slideout.js" type="text/javascript" ></script>
-  
 
   <!-- brush size glider-->
   <script src="./javascript/brushsizeglider.js" type="text/javascript" async defer></script>
@@ -275,7 +274,6 @@
   <!-- disco color -->
   <script src="./javascript/disco-color.js" type="text/javascript" async defer></script>
   
-
   <!-- The Srpay brush functionality  -->
   <script src="javascript/spray-brush.js" type="text/javascript" async defer></script>
 
@@ -283,8 +281,7 @@
     <!-- CONNECT BUTTONS AND SCRIPTS-->
     <script type="text/javascript">
       $(() => {
-        currentFunction = new DrawingLine(contextReal) //initiate desult tool
-
+        currentFunction = new DrawingLine(contextReal) 
         $("#drawing-rectangle").click(() => {
           currentFunction = new DrawingRectangle(contextReal, contextDraft);
         });
@@ -329,9 +326,6 @@
 
         $("#spray").click(() => {
           currentFunction = new SprayBrush(contextReal, contextDraft);
-        })
-        $("#tool-fill").click(() => {
-          currentFunction = new ToolFill(contextReal);
         })
 
       })
