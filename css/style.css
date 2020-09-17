@@ -20,7 +20,7 @@ p {
 .container {
   min-width: 1600px;
   background: #ebecf0;
-  max-width: 2600px;
+  max-width: 1600px;
 }
 
 #canvas-header {
@@ -41,10 +41,13 @@ p {
 /* =================== CANVAS =================== */
 
 #canvas-container {
-  height: 810px;
-  width: 1280px;
+  height: 91%;
+  width: 68%;
   position: absolute;
-  right:2%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  left:28%;
   top: 4%;
   padding: 15px;
   padding-top: 20px;
@@ -67,10 +70,8 @@ p {
 
 .canvas {
     position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+    display:flex;
+
     width: auto;
     animation: fadeIn ease 4s;
   }
@@ -78,6 +79,7 @@ p {
   #canvas-draft {
     background-color: transparent;
     width: auto;
+    display:flex;
   }
   
   #mouse-coords{
@@ -92,11 +94,11 @@ p {
 
 
 .action-log-container {
-  height: 33vh;
+  height: 33%;
   position: absolute;
   left: 4.5%;
   top: 62%;
-  width: 360px;
+  width: 20%;
   display: flex;
   text-align: left; 
   margin-right: 6px;
@@ -195,11 +197,11 @@ p {
 /* =================== LEFT TOOL BAR =================== */
 
 .toolbox-container-left {
-  height: 500px;
+  height: 56%;
   position: absolute;
   left: 4.5%;
   top: 4%;
-  width: 360px;
+  width: 20%;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -214,13 +216,13 @@ p {
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-bottom: 20px;
+  padding-bottom: 1rem;
   border-bottom: 0.5px solid #ebecf0;
 }
 
 .toolbox-titles {
   display: block;
-  margin-top: 2px;
+  margin-top: 0.6rem;
 }
 
 .toolbox-row {
@@ -234,11 +236,11 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-top: 2px;
+  margin-top: 1.8rem;
 }
 
 #color-picker {
-  margin: 6px 0;
+  margin: 0.4rem 0;
   z-index:0;
 }
 
@@ -247,7 +249,7 @@ p {
     border-radius: 1px;
     text-align: center;
     padding: 8px 8px 8px 8px;
-    margin: 4px 4px 4px 4px;
+    margin: 4px 4px 14px 4px;
     cursor: pointer;
     box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
       -7px -7px 20px rgba(255, 255, 255, 1),
@@ -280,8 +282,8 @@ p {
 }
 
 .btn {
-  height: 36px;
-  width: 42px;
+  height: 2.2rem;
+  width: 2.2rem;
   border-radius: 3px;
   background: #ecedf0;
   display: flex;
@@ -299,10 +301,10 @@ p {
    inset 0px 0px 0px 0px #0001,
    inset 0px 0px 0px 0px #fff9,        inset 0px 0px 0px 0px #0001;
   transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
-  font-size: 16px;
+  font-size: 12px;
   text-decoration: none;
   color: #6d7587;
-  margin: 10px 4px;
+  margin: 0.2rem 0.2rem;
 }
 
 .btn:hover{
@@ -325,7 +327,7 @@ p {
   margin: 2px 16px 4px 14px;
   padding: 2px 4px;
   color: #7a8397;
-  font-size: 14px;
+  font-size: 0.8rem;
   letter-spacing: 0.7px;
   border-bottom: 0.5px solid rgb(230, 230, 230);
   align-items: center;
