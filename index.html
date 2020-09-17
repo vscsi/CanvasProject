@@ -21,6 +21,19 @@
   <body> 
     <div id="side-menu" class="side-menu" onmouseleave="closeMenu()">
       <div class="color-pallet-row">
+        <ul class="share-icons">
+          <li class="share-icons__item"><i class="fab fa-twitter text-black"></i></li>
+          <li class="share-icons__item"><i class="fab fa-codepen text-black"></i></li>
+          <li class="share-icons__item"><i class="fab fa-github text-black"></i></li>
+          <li class="share-icons__item"><i class="fab fa-linkedin text-black"></i></li>
+          <li class="share-icons__block">
+            <div class="share-icons__block-left"><i class="fas fa-share text-primary"></i></div>
+            <div class="share-icons__block-right"><i class="fas fa-share text-primary"></i></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="color-pallet-row">
         <span class="pallet" id="a252A4A">#252A4A</span> 
         <span class="pallet" id="a50717B">#50717B</span> 
         <span class="pallet" id="aA09552">#A09552</span> 
@@ -53,7 +66,8 @@
         <!-- The tool eraser button  -->
         <span class="btn tool-row-2" id="tool-eraser"><img src="./assets/icons/eraser.png"></span> 
         <!-- The tool text button  -->
-        <span class="btn" id="input-text"><img src="./assets/icons/text.png"></span> 
+        <span class="btn" id="input-text"><img src="./assets/icons/text.png"></span>
+        <span class="btn" id="input-text"><img src="./assets/icons/text.png" onclick="startGame()"></span> 
         </div>
 
         <div class="toolbox-row">
@@ -202,32 +216,18 @@
   <script src="./javascript/fill-circle.js" type="text/javascript" async defer></script>
   <!-- The fill circle functionality-->
   <script src="./javascript/tool-fill.js" type="text/javascript" async defer></script>
-
-
-  <!-- Save image functionality -->
   <script src="javascript/save-image.js" type="text/javascript"></script>
-
-
-  <!-- Tool Text functionality -->
   <script src="javascript/input-text.js" type="text/javascript" async defer></script>
-
-  <!-- The drawing polygon functionality  -->
   <script src="./javascript/drawing-polygon.js" type="text/javascript" async defer></script>
 
 
   <!-- TOOLS -->
   <!-- The clear functionality  -->
   <script src="./javascript/tool-clear.js" type="text/javascript" async defer></script>
-
-  <!-- initial background color-->
   <script src="./javascript/initBackground.js" type="text/javascript" async defer></script>
-
-    <!-- Slideout.js - slide menu-->
-    <script src="./javascript/slideout.js" type="text/javascript" ></script>
-  
-
-  <!-- brush size glider-->
+  <script src="./javascript/slideout.js" type="text/javascript" ></script>
   <script src="./javascript/brushsizeglider.js" type="text/javascript" async defer></script>
+  <script src="./javascript/gravity.js" type="text/javascript" ></script>
 
   <!-- The Srpay brush functionality  -->
   <!-- <script src="javascript/spray-brush.js" type="text/javascript" async defer></script> -->
