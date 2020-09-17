@@ -22,7 +22,7 @@ class DrawText extends PaintFunction {
 }
 
 function commitText(event) {
-    const font = `${currentBrushSize}px san-serif`;
+    const font = `${currentBrushSize * 10}px san-serif`;
 
     function addInput(x, y) {
         if (containInput == false) {
