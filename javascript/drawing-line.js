@@ -11,8 +11,8 @@ class DrawingLine extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-    this.contextReal.strokeStyle = currentDrawColor;
-    this.contextReal.lineWidth = currentBrushSize;
+    ontextReal.strokeStyle = currentDrawColor;
+    contextReal.lineWidth = currentBrushSize;
     contextDraft.lineWidth = currentBrushSize;
     this.origX = coord[0];
     this.origY = coord[1];

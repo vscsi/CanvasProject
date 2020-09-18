@@ -55,7 +55,7 @@ class PaintFunction {
 $(document).bind('mousemove', function (e) {
   $('#mouse-coords').css({
     left: e.offsetX + 20,
-    top: e.offsetY + 32
+    top: e.offsetY + 22
   });
   $('#mouse-coords').text(`x:${e.offsetX} y:${e.offsetY}`);
 });

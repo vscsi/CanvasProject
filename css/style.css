@@ -11,11 +11,10 @@ body {
 }
 
 p {
-  font-size: 18px;
   color: rgb(66, 66, 66);
   width: 100%;
   margin: 8px auto;
-
+  font-size: 0.75rem;
 }
 
 .container {
@@ -171,14 +170,13 @@ p {
 }
 
 .shapes {
-  animation: fadeIn ease 11s;
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
   justify-content: space-between;
   margin: 2px 16px 4px 14px;
   padding: 2px 4px;
   color: #7a8397;
-  font-size: 14px;
+  font-size: 0.6rem;
   letter-spacing: 0.7px;
   border-bottom: 0.5px solid rgb(230, 230, 230);
   align-items: center;
@@ -188,6 +186,7 @@ p {
 #shapeList {
   list-style: none;
   padding-left:0;
+  animation: fadeIn ease 11s;
 }
 
 .action-btn-container {
@@ -196,8 +195,8 @@ p {
 }
 
 .action-btn {
-  height: 32px;
-  width: 36px;
+  height: 1.5rem;
+  width: 1.5rem;
   border-radius: 3px;
   background: #ecedf0;
   display: flex;
@@ -216,7 +215,7 @@ p {
    inset 0px 0px 0px 0px #0001,
    inset 0px 0px 0px 0px #fff9,        inset 0px 0px 0px 0px #0001;
   transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
-  font-size: 16px;
+  font-size: 0.75rem;
   text-decoration: none;
   color: #6d7587;
   margin: 2px 6px;
@@ -272,7 +271,6 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
-  margin: 1px 0;
 }
 
 .toolbox-row-1 {
@@ -293,7 +291,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-top: 1.8rem;
+  margin-top: 6%;
 }
 
 #color-picker {
@@ -341,8 +339,8 @@ p {
 
 .btn {
   animation: fadeIn ease 10.5s;
-  height: 2.2rem;
-  width: 2.2rem;
+  height: 1.6rem;
+  width: 1.6rem;
   border-radius: 3px;
   background: #ecedf0;
   display: flex;
@@ -379,6 +377,127 @@ p {
   color: #363636;
 }
 
+
+/* TOOL BOX BUTTONS */
+
+#tool-brush {
+  background-image: url("../assets/icons/brush.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#spray {
+  background-image: url("../assets/icons/spray.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#input-text {
+  background-image: url("../assets/icons/text.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#random-color {
+  background-image: url("../assets/icons/color-wheel.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#disco-color {
+  background-image: url("../assets/icons/disco-ball.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#tool-eraser {
+  background-image: url("../assets/icons/eraser.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#drawing-line {
+  background-image: url("../assets/icons/linear.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#quadratic-line-1 {
+  background-image: url("../assets/icons/quad1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#quadratic-line-2 {
+  background-image: url("../assets/icons/quad2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#drawing-polygon {
+  background-image: url("../assets/icons/polygon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#drawing-square {
+  background-image: url("../assets/icons/square.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#drawing-rectangle {
+  background-image: url("../assets/icons/rectangle.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#drawing-circle {
+  background-image: url("../assets/icons/circle.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#fillsquare {
+  background-image: url("../assets/icons/square-filled.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#fillcircle {
+  background-image: url("../assets/icons/circle-filled.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#fillrect {
+  background-image: url("../assets/icons/rectangle-filled.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+
+#save {
+  background-image: url("../assets/icons/save.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#undo {
+  background-image: url("../assets/icons/undo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+#redo {
+  background-image: url("../assets/icons/redo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1rem;
+}
+
+
+
 .toolbox-inner-row {
   animation: fadeIn ease 10s;
   font-family: "Source Sans Pro", sans-serif;
@@ -387,12 +506,16 @@ p {
   margin: 2px 16px 4px 14px;
   padding: 2px 4px;
   color: #7a8397;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   letter-spacing: 0.7px;
   border-bottom: 0.5px solid rgb(230, 230, 230);
   align-items: center;
   margin: 2px 6px;
   width: 100%;
+}
+
+#brushSizeGlider {
+  width: 70%
 }
 
 
@@ -486,7 +609,7 @@ p {
 .side-menu {
   height: 94%;
   width: 300px;
-  position: fixed;
+  position: absolute;
   top: 3%;
   left: 0;
   background: #fff;
