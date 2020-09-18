@@ -5,13 +5,7 @@ $('#bgcolor-picker').spectrum({
     showAlpha: "false"
 });
 
-$(".sp-val").click(function () {
-    g = $("#bgcolor-picker").spectrum("get");
-    currentBgColor = g.toRgbString();
-    console.log(currentBgColor);
-    changeBg(currentBgColor, contextReal);
-});
-$(".sp-hue").click(function () {
+$(".sp-choose").click(function () {
     g = $("#bgcolor-picker").spectrum("get");
     currentBgColor = g.toRgbString();
     console.log(currentBgColor);
