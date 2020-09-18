@@ -129,7 +129,6 @@ class QuadraticLine2 extends PaintFunction {
       drawQuadline2End(coord[0], coord[1], this.contextReal); // 4th pt
     }
     clickTracker2 += 1
-    console.log(clickTracker2)
     if (clickTracker2 > 2) {
       clickTracker2 = 0
     } else {}

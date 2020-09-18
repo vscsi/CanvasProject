@@ -10,7 +10,6 @@ const randomColor = () => {
         var g = Math.round(Math.random() * 255);
         currentInstance[i].fillStyle = `rgb(${r}, ${b}, ${g})`
         currentInstance[i].strokeStyle = `rgb(${r}, ${b}, ${g})`
-        console.log(`rgb(${r}, ${g}, ${b})`)
     };
     currentBgColor = `rgb(${r}, ${b}, ${g})`
     load(contextReal);
@@ -27,7 +26,22 @@ $('#random-color').click(() => {
     else if(clickOnPalette3){
         randomPalette3();
     }
-    else if(clickOnPalette1 == false && clickOnPalette2 == false && clickOnPalette3 == false){
+    else if(clickOnPalette4){
+        randomPalette4();
+    }
+    else if(clickOnPalette5){
+        randomPalette5();
+    }
+    else if(clickOnPalette6){
+        randomPalette6();
+    }
+    else if(clickOnPalette7){
+        randomPalette7();
+    }
+    else if(clickOnPalette8){
+        randomPalette8();
+    }
+    else if(clickOnPalette1 == false && clickOnPalette2 == false && clickOnPalette3 == false && clickOnPalette4 == false && clickOnPalette5 == false && clickOnPalette6 == false && clickOnPalette7 == false && clickOnPalette8 == false){
         randomColor();
     }
 });

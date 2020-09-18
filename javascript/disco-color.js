@@ -9,7 +9,6 @@ const discoColor = () => {
             var g = Math.round(Math.random() * 255);
             currentInstance[i].fillStyle = `rgb(${r}, ${b}, ${g})`
             currentInstance[i].strokeStyle = `rgb(${r}, ${b}, ${g})`
-            console.log(`rgb(${r}, ${b}, ${g})`)
         };
         currentBgColor = `rgb(${r}, ${b}, ${g})`
         load(contextReal);
