@@ -209,7 +209,7 @@ class Textbox {
         this.text = "";
         this.x = options.x;
         this.y = options.y;
-        this.font = `${options.lineWidth * 10}px san-serif`;
+        this.font = `${options.lineWidth * 10}px`;
         this.lineWidth = options.lineWidth;
         this.fillStyle = options.fillStyle;
     };
