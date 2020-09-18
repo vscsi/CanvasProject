@@ -5,6 +5,7 @@ $('#color-picker').spectrum({
 
 $(".sp-val").click(function () {
   t = $("#color-picker").spectrum("get");
+  console.log(currentDrawColor);
   currentDrawColor = t.toRgbString()
 });
 
