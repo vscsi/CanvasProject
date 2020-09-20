@@ -23,8 +23,6 @@ const drawCircle = (centerX, centerY, radiusX, radiusY, type, strokeStyle, lineW
     refresh(context)
 };
 
-// constructor (startX, startY, width, type="fill", strokeStyle="black", lineWidth=2, fillStyle="black", context)
-
 const drawFillSquare = (startX, startY, width, type="fill", strokeStyle, lineWidth, fillStyle, context) => {
     currentInstance[currentInstanceIndex] = new Square({startX: startX, startY: startY, width: width, type: type, strokeStyle: strokeStyle, lineWidth: lineWidth, fillStyle: fillStyle, context: context});
     refresh(context)
@@ -38,13 +36,17 @@ const drawStrokeSquare = (startX, startY, width, type="stroke", strokeStyle, lin
 const drawBrushInit = (x, y, strokeStyle, lineWidth, context) => {
     currentInstance[currentInstanceIndex] = new Brush({context : context, strokeStyle : strokeStyle, lineWidth : lineWidth});
     currentInstance[currentInstanceIndex].append(x, y);
-    // refresh or not? no, refresh will increment the currentInstanceIndex
 };
 
 const drawErasorInit = (x, y, strokeStyle, lineWidth, context) => {
     currentInstance[currentInstanceIndex] = new Erasor({context : context, strokeStyle : strokeStyle, lineWidth : lineWidth});
     currentInstance[currentInstanceIndex].append(x, y);
-    // refresh or not? no, refresh will increment the currentInstanceIndex
+};
+
+const drawSprayBrush1 = (x, y, fillStyle, context) => {
+    currentInstance[currentInstanceIndex] = new SprayBrush1({context : context, fillStyle : fillStyle});
+    currentInstance[currentInstanceIndex].reassign(x, y);
+    refresh(context)
 };
 
 const drawBrushDrag = (x, y) => {
@@ -74,12 +76,7 @@ const drawQuadline2Drag = (x, y) => {
     currentInstance[currentInstanceIndex].append(x, y);
 };
 
-const drawQuadline2Drag2nd = (x, y) => {
-    // change (x3, y3)
-};
-
 const drawQuadline2End = (x, y, context) => {
-    // append (x4, y4)
     currentInstance[currentInstanceIndex].append(x, y);
     refresh(context)
 };

@@ -68,6 +68,8 @@ class Rect {
     commit = () => {
         this.context.fillStyle = this.color;
         if (this.type === "fill") {
+            this.context.lineWidth = this.lineWidth;
+            this.context.strokeStyle = this.strokeStyle;
             this.context.fillStyle = this.fillStyle;
             this.context.fillRect(this.startX, this.startY, this.endX-this.startX, this.endY-this.startY)
         };
@@ -246,5 +248,28 @@ class Polygon extends Brush {
     append = (x, y) => {
         this.x.push(x);
         this.y.push(y);
+    };
+};
+
+class SprayBrush1 extends Brush {
+    constructor(options) {
+        super(options);
+        this.name = "spray brush";
+        this.fillStyle = options.fillStyle;
+        this.lineWidth = "X";
+    };
+    reassign = (x, y) => {
+        this.x = x.slice();
+        this.y = y.slice()
+    };
+    commit = () => {
+        this.context.fillStyle = this.fillStyle;
+        this.context.lineJoin = this.context.lineCap = 'round';
+        for (var j = 0; j < this.x.length; j++) {
+            this.context.fillRect(
+                this.x[j],
+                this.y[j],
+                1, 1);
+        };
     };
 }
