@@ -1,7 +1,7 @@
 # Canvas Project
 
 This is a web application that uses HTML5 canvas API, depending heavily on javascript.
-[Click here to try it out](http://team4canvas.surge.sh/)
+[Click here to try it out](http://canvasprojectteam4.surge.sh/)
 
 ## Built With
 
